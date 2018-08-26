@@ -1,0 +1,71 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%2345678901234567890123456789012345678901234567890123456789012345678901234567890
+%        1         2         3         4         5         6         7         8
+
+\documentclass[letterpaper, 10 pt, conference]{ieeeconf}  % Comment this line out if you need a4paper
+
+%\documentclass[a4paper, 10pt, conference]{ieeeconf}      % Use this line for a4 paper
+
+\IEEEoverridecommandlockouts                              % This command is only needed if 
+                                                          % you want to use the \thanks command
+
+\overrideIEEEmargins                                      % Needed to meet printer requirements.
+
+%In case you encounter the following error:
+%Error 1010 The PDF file may be corrupt (unable to open PDF file) OR
+%Error 1000 An error occurred while parsing a contents stream. Unable to analyze the PDF file.
+%This is a known problem with pdfLaTeX conversion filter. The file cannot be opened with acrobat reader
+%Please use one of the alternatives below to circumvent this error by uncommenting one or the other
+%\pdfobjcompresslevel=0
+%\pdfminorversion=4
+
+% See the \addtolength command later in the file to balance the column lengths
+% on the last page of the document
+
+% The following packages can be found on http:\\www.ctan.org
+\usepackage{graphicx} % for pdf, bitmapped graphics files
+%\usepackage{epsfig} % for postscript graphics files
+%\usepackage{mathptmx} % assumes new font selection scheme installed
+%\usepackage{times} % assumes new font selection scheme installed
+\usepackage{amsmath} % assumes amsmath package installed
+\usepackage{amssymb}  % assumes amsmath package installed
+\usepackage{tabularx}
+\usepackage{multirow}
+
+\title{\LARGE \bf
+Enhancing Visual-Based Localization by\\
+Learning Appearance of Paired Modalities
+}
+
+\author{Nathan Piasco${}^{1,2}$, D\'esir\'e Sidib\'e${}^1$, Val\'erie Gouet-Brunet${}^2$ and C\'edric Demonceaux${}^1$% <-this % stops a space
+\thanks{${}^1$ Le2i, ERL CNRS VIBOT 6000,  Universit\'e  Bourgogne Franche-Comt\'e}% <-this % stops a space
+\thanks{${}^2$ Univ. Paris-Est, LaSTIG MATIS, IGN, ENSG, F-94160 Saint-Mand\'e, France}%
+}
+
+\begin{document}
+
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+\maketitle
+\thispagestyle{empty}
+\pagestyle{empty}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+In this paper, we present a new training with side modality framework to enhance image-based localization. The localization is performed by extracting a compact global image descriptor from a convolutional neural network. In order to learn side modality information, we train a fully convolutional decoder network that transfers from one modality to another.
+
+Experiments show that our system is able to enhance a purely image-based system by properly learning appearance of a side modality.
+\end{abstract}
+
+\input{sections/introduction}
+\input{sections/related_work}
+\input{sections/method}
+\input{sections/experiments}
+\input{sections/conclusion}
+\input{sections/acknowledgement}
+
+\bibliographystyle{IEEEtran}
+\bibliography{bib/mendeley,bib/other}
+
+\end{document}
