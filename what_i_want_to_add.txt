@@ -1,0 +1,2 @@
+- Focus on depth modality
+- related work, compare with day -> night cnn transformation for loop closing: say that we focus on recreating a radiometric-free image representation (like the work of...) and choose depth modality for that
