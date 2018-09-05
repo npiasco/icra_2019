@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70206" creator="Ipe 7.2.7">
-<info created="D:20180903103625" modified="D:20180903114524"/>
+<info created="D:20180903103625" modified="D:20180905142009"/>
 <bitmap id="1" width="1280" height="960" length="41573" ColorSpace="DeviceRGB" Filter="DCTDecode" BitsPerComponent="8" encoding="base64">
 /9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoM
 DAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsN
@@ -4893,156 +4893,181 @@ h
 <page>
 <layer name="alpha"/>
 <view layers="alpha" active="alpha"/>
-<path layer="alpha" matrix="2 0 0 2.0412 64 -954.325" stroke="black" pen="fat">
+<path layer="alpha" matrix="2 0 0 2.0412 68 -1082.33" stroke="black" pen="fat">
 64 816 m
 64 784 l
 96 792 l
 96 808 l
 h
 </path>
-<path matrix="2 0 0 2.0412 64 -954.325" stroke="black" pen="fat">
+<path matrix="2 0 0 2.0412 68 -1082.33" stroke="black" pen="fat">
 104 808 m
 104 792 l
 120 792 l
 120 808 l
 h
 </path>
-<path matrix="-2 -0 0 -2.0412 512 2311.6" stroke="black" dash="dashed" pen="fat">
+<path matrix="-2 0 0 -2.0412 516 2267.6" stroke="black" dash="dashed" pen="fat">
 64 816 m
 64 784 l
 96 792 l
 96 808 l
 h
 </path>
-<image matrix="0.130217 0 0 0.151584 96.5209 614.14" rect="0 197.875 595 644.125" bitmap="2"/>
-<image matrix="0.129405 0 0 0.152029 97.004 693.168" rect="0 197.875 595 644.125" bitmap="1"/>
-<image matrix="0.130217 0 0 0.150237 400.521 613.943" rect="0 197.875 595 644.125" bitmap="3"/>
-<path matrix="2 0 0 2.0412 64 -1068.63" stroke="black" pen="fat">
+<image matrix="0.130217 0 0 0.151584 100.521 486.14" rect="0 197.875 595 644.125" bitmap="2"/>
+<image matrix="0.129405 0 0 0.152029 101.004 585.168" rect="0 197.875 595 644.125" bitmap="1"/>
+<image matrix="0.130217 0 0 0.150237 404.521 569.943" rect="0 197.875 595 644.125" bitmap="3"/>
+<path matrix="2 0 0 2.0412 68 -1168.63" stroke="black" pen="fat">
 64 816 m
 64 784 l
 96 792 l
 96 808 l
 h
 </path>
-<path matrix="2 0 0 2.0412 64 -1068.63" stroke="black" pen="fat">
+<path matrix="2 0 0 2.0412 68 -1168.63" stroke="black" pen="fat">
 104 808 m
 104 792 l
 120 792 l
 120 808 l
 h
 </path>
-<path matrix="2 0 0 2.0412 0 -791.029" stroke="black" dash="dashed" arrow="normal/normal">
-220 700 m
-220 688 l
-68 688 l
-68 664 l
-92 664 l
-</path>
-<path matrix="2 0 0 2.0412 0 -791.029" stroke="black">
+<path matrix="2 0 0 2.0412 -4 -847.029" stroke="black">
 8 0 0 8 184 664 e
 </path>
-<path matrix="2 0 0 2.0412 0 -791.029" stroke="black" arrow="normal/small" rarrow="normal/small">
-44 752 m
-36 752 l
-36 720 l
-44 720 l
-</path>
-<path matrix="2 0 0 2.0412 0 -791.029" stroke="black" cap="1">
+<path matrix="2 0 0 2.0412 4 -919.029" stroke="black" cap="1">
 40 720 m
 40 720 l
 </path>
-<path matrix="4 0 0 2.0412 -176 -791.029" stroke="black" arrow="normal/small">
+<path matrix="4 0 0 2.0412 -172 -919.029" stroke="black" arrow="normal/small">
 88 720 m
 92 720 l
 </path>
-<path matrix="4 0 0 2.0412 32 -791.029" stroke="black" arrow="normal/small">
+<path matrix="4 0 0 2.0412 36 -835.029" stroke="black" arrow="normal/small">
 88 720 m
 92 720 l
 </path>
-<path matrix="4 0 0 2.0412 -96 -791.029" stroke="black" arrow="normal/small">
+<path matrix="4 0 0 2.0412 -92 -919.029" stroke="black" arrow="normal/small">
 88 720 m
 92 720 l
 </path>
-<path matrix="2 0 0 2.0412 0.208885 -795.996" stroke="black" dash="dotted" arrow="normal/small">
-116 736 m
-116 744 l
-172 744 l
-172 736 l
-</path>
-<path matrix="2 0 0 2.0412 0.208885 -787.831" stroke="black" dash="dotted" arrow="normal/small">
-104 736 m
-104 748 l
-184 748 l
-184 736 l
-</path>
-<path matrix="4 0 0 2.0412 -96 -905.336" stroke="black" arrow="normal/small">
+<path matrix="4 0 0 2.0412 -92 -1005.34" stroke="black" arrow="normal/small">
 88 720 m
 92 720 l
 </path>
-<path matrix="12 0 0 2.0412 -752 -905.336" stroke="black" arrow="normal/small">
-88 720 m
-92 720 l
-</path>
-<path matrix="2 0 0 2.0412 0 -791.029" stroke="black" arrow="normal/small">
-144 712 m
-144 696 l
-184 696 l
-184 672 l
-</path>
-<path matrix="2 0 0 2.0412 16 -791.029" stroke="black">
+<path matrix="2 0 0 2.0412 12 -847.029" stroke="black">
 208 664 m
 216 672 l
 224 664 l
 216 656 l
 h
 </path>
-<path matrix="2 0 0 2.0412 8 -595.073" stroke="black">
+<path matrix="2 0 0 2.0412 12 -655.073" stroke="black">
 208 664 m
 216 672 l
 224 664 l
 216 656 l
 h
 </path>
-<path matrix="12 0 0 2.0412 -672 -905.336" stroke="black" arrow="normal/small">
+<path matrix="12 0 0 2.0412 -676 -961.336" stroke="black" arrow="normal/small">
 88 720 m
 92 720 l
 </path>
-<path matrix="62 0 0 2.0412 -5280 -709.381" stroke="black" arrow="normal/small">
-88 720 m
-92 720 l
-</path>
-<path matrix="2 0 0 2.0412 0 -791.029" stroke="black" arrow="normal/small">
+<path matrix="2 0 0 1.01911 4 -82.4185" stroke="black" arrow="normal/small">
 220 736 m
 220 752 l
 </path>
-<text matrix="1 0 0 1 4 32" transformations="translations" pos="8 692" stroke="black" type="minipage" width="64" height="12.197" depth="7.23" valign="top" size="small" style="center">Image/Depth peer</text>
-<text matrix="1 0 0 1 464 -12" transformations="translations" pos="8 692" stroke="black" type="minipage" width="64" height="6.48" depth="1.49" valign="top" size="small" style="center">Fake depth</text>
-<text matrix="1 0 0 1 184 -12" transformations="translations" pos="8 692" stroke="black" type="minipage" width="64" height="5.607" depth="0.62" valign="top" size="small" style="center">CNN encoder</text>
-<text matrix="1 0 0 1 184 -124" transformations="translations" pos="8 692" stroke="black" type="minipage" width="64" height="5.607" depth="0.62" valign="top" size="small" style="center">CNN encoder</text>
-<text matrix="1 0 0 1 312 -4" transformations="translations" pos="8 692" stroke="black" type="minipage" width="64" height="12.197" depth="7.23" valign="top" size="small" style="center">CNN decoder (U-Net like)</text>
-<text matrix="1 0 0 1 400 92" transformations="translations" pos="8 692" stroke="black" type="minipage" width="64" height="5.557" depth="0.57" valign="top" size="small" style="center">L1 Loss</text>
-<text matrix="1 0 0 1 408 -148" transformations="translations" pos="8 692" stroke="black" type="minipage" width="64" height="6.48" depth="1.49" valign="top" size="small" style="center">Triplet Loss</text>
-<text transformations="translations" pos="336 544" stroke="black" type="minipage" width="64" height="11.036" depth="6.05" valign="top" size="small" style="center">Descriptors concatenation</text>
-<path stroke="black">
+<text matrix="1 0 0 1 100 -84" transformations="translations" pos="8 692" stroke="black" type="minipage" width="64" height="12.197" depth="7.23" valign="top" size="small" style="center">Image/Depth peer</text>
+<text matrix="1 0 0 1 404 -96" transformations="translations" pos="8 692" stroke="black" type="minipage" width="64" height="6.48" depth="1.49" valign="top" size="small" style="center">Fake depth</text>
+<text matrix="1 0 0 1 188 -140" transformations="translations" pos="8 692" stroke="black" type="minipage" width="64" height="5.607" depth="0.62" valign="top" size="small" style="center">CNN encoder</text>
+<text matrix="1 0 0 1 188 -224" transformations="translations" pos="8 692" stroke="black" type="minipage" width="64" height="5.607" depth="0.62" valign="top" size="small" style="center">CNN encoder</text>
+<text matrix="1 0 0 1 316 -48" transformations="translations" pos="8 692" stroke="black" type="minipage" width="64" height="12.197" depth="7.23" valign="top" size="small" style="center">CNN decoder (U-Net like)</text>
+<text matrix="1 0 0 1 440 8" transformations="translations" pos="8 692" stroke="black" type="minipage" width="64" height="5.557" depth="0.57" valign="top" size="small" style="center">L1 Loss</text>
+<text matrix="1 0 0 1 404 -204" transformations="translations" pos="8 692" stroke="black" type="minipage" width="64" height="6.48" depth="1.49" valign="top" size="small" style="center">Triplet Loss</text>
+<text matrix="1 0 0 1 -48 -28" transformations="translations" pos="336 544" stroke="black" type="minipage" width="64" height="11.036" depth="6.05" valign="top" size="small" style="center">Descriptors concatenation</text>
+<path matrix="1 0 0 1 -4 -56" stroke="black">
 368 576 m
 368 552 l
 </path>
-<path stroke="black">
+<path matrix="1 0 0 1 -4 -56" stroke="black">
 356 564 m
 380 564 l
 </path>
-<text transformations="translations" pos="272 688" stroke="black" type="minipage" width="32" height="11.086" depth="6.1" valign="top" size="small" style="center">Build desc.</text>
-<text matrix="1 0 0 1 0 -116" transformations="translations" pos="272 688" stroke="black" type="minipage" width="32" height="11.086" depth="6.1" valign="top" size="small" style="center">Build desc.</text>
-<path stroke="black" arrow="normal/small">
-264 680 m
-264 704 l
-312 704 l
-312 680 l
-320 680 l
+<text matrix="1 0 0 1 4 -128" transformations="translations" pos="272 688" stroke="black" type="minipage" width="32" height="11.086" depth="6.1" valign="top" size="small" style="center">Build desc.</text>
+<text matrix="1 0 0 1 4 -216" transformations="translations" pos="272 688" stroke="black" type="minipage" width="32" height="11.086" depth="6.1" valign="top" size="small" style="center">Build desc.</text>
+<text matrix="1 0 0 1 0 -60" transformations="translations" pos="264 728" stroke="black" type="label" width="63.743" height="6.23" depth="1.74" valign="baseline" size="small">Skip connection</text>
+<text matrix="1 0 0 1 4 -68" transformations="translations" pos="436 764" stroke="black" type="label" width="7.965" height="8.169" depth="0" valign="baseline" size="large" style="math">L</text>
+<text matrix="1 0 0 1 4 -260" transformations="translations" pos="436 764" stroke="black" type="label" width="7.965" height="8.169" depth="0" valign="baseline" size="large" style="math">L</text>
+<path matrix="1 0 0 1 0 -1.17177" stroke="black" arrow="normal/small">
+268 552 m
+268 636 l
+324 636 l
 </path>
-<text matrix="1 0 0 1 -8 0" transformations="translations" pos="264 728" stroke="black" type="label" width="63.743" height="6.23" depth="1.74" valign="baseline" size="small">Skip connection</text>
-<text matrix="1 0 0 1 0 -8" transformations="translations" pos="436 764" stroke="black" type="label" width="7.965" height="8.169" depth="0" valign="baseline" size="large" style="math">L</text>
-<text matrix="1 0 0 1 8 -204" transformations="translations" pos="436 764" stroke="black" type="label" width="7.965" height="8.169" depth="0" valign="baseline" size="large" style="math">L</text>
+<path stroke="black" arrow="normal/small">
+308 464 m
+364 464 l
+364 492 l
+</path>
+<path stroke="black" arrow="normal/small">
+308 552 m
+364 552 l
+364 524 l
+</path>
+<path stroke="black" arrow="normal/small">
+364 552 m
+392 552 l
+</path>
+<path stroke="black" arrow="normal/small">
+364 464 m
+392 464 l
+</path>
+<path matrix="2 0 0 2.0412 -24 -803.029" stroke="black">
+208 664 m
+216 672 l
+224 664 l
+216 656 l
+h
+</path>
+<text matrix="1 0 0 1 368 -160" transformations="translations" pos="8 692" stroke="black" type="minipage" width="64" height="6.48" depth="1.49" valign="top" size="small" style="center">Triplet Loss</text>
+<text matrix="1 0 0 1 -32 -216" transformations="translations" pos="436 764" stroke="black" type="label" width="7.965" height="8.169" depth="0" valign="baseline" size="large" style="math">L</text>
+<path matrix="2 0 0 2.0412 -24 -891.029" stroke="black">
+208 664 m
+216 672 l
+224 664 l
+216 656 l
+h
+</path>
+<text matrix="1 0 0 1 368 -248" transformations="translations" pos="8 692" stroke="black" type="minipage" width="64" height="6.48" depth="1.49" valign="top" size="small" style="center">Triplet Loss</text>
+<text matrix="1 0 0 1 -32 -304" transformations="translations" pos="436 764" stroke="black" type="label" width="7.965" height="8.169" depth="0" valign="baseline" size="large" style="math">L</text>
+<path stroke="black" dash="dashed" pen="heavier" arrow="normal/small">
+484 632 m
+496 632 l
+496 416 l
+176 416 l
+176 464 l
+192 464 l
+</path>
+<path stroke="black" arrow="normal/small" rarrow="normal/small">
+96 544 m
+88 544 l
+88 644 l
+96 644 l
+</path>
+<path stroke="black" dash="dotted" arrow="normal/small">
+236 576 m
+236 660 l
+348 660 l
+</path>
+<path stroke="black" dash="dotted" arrow="normal/small">
+216 580 m
+216 680 l
+368 680 l
+368 664 l
+</path>
+<path stroke="black" rarrow="normal/small">
+428 700 m
+136 700 l
+136 684 l
+</path>
 </page>
 <page>
 <layer name="alpha"/>

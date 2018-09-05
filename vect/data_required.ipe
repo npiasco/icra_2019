@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70206" creator="Ipe 7.2.7">
-<info created="D:20180903113543" modified="D:20180903115149"/>
+<info created="D:20180903113543" modified="D:20180905154735"/>
 <bitmap id="1" width="1280" height="960" length="192984" ColorSpace="DeviceRGB" Filter="DCTDecode" BitsPerComponent="8" encoding="base64">
 /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRof
 Hh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwh
@@ -11888,7 +11888,7 @@ HNNyO9ITQAvtRj0pM9aM0AO4wOOaUHH9Kb2yKOtAA3PNG7HBoBobBFAB3yKC2eKaKQnnigB1
 GfTpTM0E8UgHe9NyCfSl3ZpMjnigBwbFLnPIqPPFGTQBISCPeo93PNNzznNG4YoAXcAeKcZN
 w96jyPSmbsGkM//Z
 </bitmap>
-<bitmap id="8" width="1280" height="960" length="33354" ColorSpace="DeviceRGB" Filter="DCTDecode" BitsPerComponent="8" encoding="base64">
+<bitmap id="9" width="1280" height="960" length="33354" ColorSpace="DeviceRGB" Filter="DCTDecode" BitsPerComponent="8" encoding="base64">
 /9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoM
 DAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsN
 FBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wgAR
@@ -12760,14 +12760,14 @@ h
 <page>
 <layer name="alpha"/>
 <view layers="alpha" active="alpha"/>
-<path layer="alpha" matrix="1 0 0 1 76 0" stroke="black">
+<path layer="alpha" matrix="1 0 0 1 92 8" stroke="black">
 128 720 m
 128 784 l
 192 784 l
 192 720 l
 h
 </path>
-<path matrix="1 0 0 1 72 -4" stroke="black">
+<path matrix="1 0 0 1 88 4" stroke="black">
 136 776 m
 164 764
 144 740
@@ -12777,24 +12777,64 @@ h
 188 776
 188 776 c
 </path>
-<path matrix="1 0 0 1 69.3265 -10.6178" stroke="red" pen="fat">
+<path matrix="1 0 0 1 85.3265 -2.6178" stroke="red" pen="fat">
 156 768 m
 160 764 l
 </path>
-<path matrix="1 0 0 1 69.3265 -10.6178" stroke="red" pen="fat">
+<path matrix="1 0 0 1 85.3265 -2.6178" stroke="red" pen="fat">
 156 764 m
 160 768 l
 </path>
 <image matrix="0.0940056 0 0 0.0984785 132.194 728.454" rect="0 197.875 595 644.125" bitmap="2"/>
 <image matrix="0.0934256 0 0 0.100682 140 695.178" rect="0 197.875 595 644.125" bitmap="6"/>
-<path matrix="1 0 0 0.954545 76 32.3636" stroke="black" dash="dashed">
-52 800 m
-52 712 l
-196 712 l
-196 800 l
+<text matrix="1 0 0 1 12 -12" transformations="translations" pos="204 728" stroke="black" type="label" width="74.305" height="6.918" depth="0" valign="baseline">Data localization</text>
+<path stroke="black" pen="heavier">
+208 756 m
+208 748 l
+</path>
+<path stroke="black" pen="heavier">
+204 752 m
+212 752 l
+</path>
+</page>
+<page>
+<layer name="alpha"/>
+<view layers="alpha" active="alpha"/>
+<path layer="alpha" matrix="1 0 0 1 72 -4" stroke="black">
+128 720 m
+128 784 l
+192 784 l
+192 720 l
 h
 </path>
-<text matrix="1 0 0 1 72 0" transformations="translations" pos="204 712" stroke="black" type="label" width="23.761" height="15.978" depth="0" valign="baseline" size="Huge" style="math">*3</text>
+<path matrix="1 0 0 1 68 -8" stroke="black">
+136 776 m
+164 764
+144 740
+176 732
+172 772
+184 740
+188 776
+188 776 c
+</path>
+<path matrix="1 0 0 1 65.3265 -14.6178" stroke="red" pen="fat">
+156 768 m
+160 764 l
+</path>
+<path matrix="1 0 0 1 65.3265 -14.6178" stroke="red" pen="fat">
+156 764 m
+160 768 l
+</path>
+<image matrix="0.0934256 0 0 0.100682 124 699.178" rect="0 197.875 595 644.125" bitmap="6"/>
+<text matrix="1 0 0 1 -8 -24" transformations="translations" pos="204 728" stroke="black" type="label" width="74.305" height="6.918" depth="0" valign="baseline">Data localization</text>
+<path matrix="1 0 0 1 -20 -12" stroke="black" pen="heavier">
+208 756 m
+208 748 l
+</path>
+<path matrix="1 0 0 1 -20 -12" stroke="black" pen="heavier">
+204 752 m
+212 752 l
+</path>
 </page>
 <page>
 <layer name="alpha"/>
@@ -12803,14 +12843,7 @@ h
 <image matrix="0.0934256 0 0 0.100682 148 687.178" rect="0 197.875 595 644.125" bitmap="6"/>
 <image matrix="0.0935005 0 0 0.101549 208.352 718.43" rect="0 197.875 595 644.125" bitmap="4"/>
 <image matrix="0.0935947 0 0 0.100326 212.213 688.146" rect="0 197.875 595 644.125" bitmap="1"/>
-<image matrix="0.094024 0 0 0.100951 272.218 718.765" rect="0 197.875 595 644.125" bitmap="8"/>
+<image matrix="0.094024 0 0 0.100951 272.218 718.765" rect="0 197.875 595 644.125" bitmap="9"/>
 <image matrix="0.0936254 0 0 0.100333 276.381 688.122" rect="0 197.875 595 644.125" bitmap="5"/>
-<path stroke="black" dash="dashed">
-140 788 m
-140 704 l
-336 704 l
-336 788 l
-h
-</path>
 </page>
 </ipe>

@@ -1,0 +1,20 @@
+{
+\renewcommand{\arraystretch}{1.5}
+\begin{table}
+	\caption{Required data during training}
+	\footnotesize \center
+	\begin{tabular}{c | c || c}
+	\multicolumn{2}{c||}{\textbf{Training method}} & \textbf{Required data} \\
+	\hline
+	\multirow{3}{*}{Hallucination} & \textit{Image encoder}	& Triplet of images\\
+	\cline{2-3}
+								   & \textit{Depth encoder}	& Triplet of depth maps\\
+	\cline{2-3}
+							       & \textit{Hall encoder}	& Triplet of aligned images+depth\\
+	\hline
+	\multirow{2}{*}{Our} & \textit{Encoders} & Triplet of images\\
+	\cline{2-3}
+						 & \textit{Decoder} & Aligned images+depth\\
+	\end{tabular}
+\end{table}
+}
