@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70206" creator="Ipe 7.2.7">
-<info created="D:20180905165342" modified="D:20180905171240"/>
+<info created="D:20180905165342" modified="D:20180907174507"/>
 <bitmap id="1" width="865" height="865" length="92406" ColorSpace="DeviceRGB" Filter="DCTDecode" BitsPerComponent="8" encoding="base64">
 /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRof
 Hh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwh
@@ -30509,30 +30509,7 @@ h
 <page>
 <layer name="alpha"/>
 <view layers="alpha" active="alpha"/>
-<path layer="alpha" stroke="black">
-96 688 m
-144 688 l
-144 688 l
-</path>
-<path stroke="black">
-96 704 m
-112 704 l
-</path>
-<path stroke="black">
-144 704 m
-208 704 l
-208 688 l
-272 688 l
-272 704 l
-336 704 l
-336 688 l
-</path>
-<path stroke="black">
-128 672 m
-128 608 l
-128 608 l
-</path>
-<image matrix="0.107746 0 0 0.143492 144.025 579.575" rect="0 197.875 595 644.125" bitmap="14"/>
+<image layer="alpha" matrix="0.107746 0 0 0.143492 144.025 579.575" rect="0 197.875 595 644.125" bitmap="14"/>
 <image matrix="0.107599 0 0 0.107641 208.022 594.658" rect="0 123.5 595 718.5" bitmap="1"/>
 <image matrix="0.107544 0 0 0.107558 272.023 594.704" rect="0 123.5 595 718.5" bitmap="2"/>
 <image matrix="0.107635 0 0 0.143409 144.018 515.622" rect="0 197.875 595 644.125" bitmap="15"/>
@@ -30547,5 +30524,49 @@ h
 <image matrix="0.107675 0 0 0.143343 144.033 323.625" rect="0 197.875 595 644.125" bitmap="5"/>
 <image matrix="0.107501 0 0 0.107587 208.08 338.707" rect="0 123.5 595 718.5" bitmap="10"/>
 <image matrix="0.107539 0 0 0.107553 272.034 338.716" rect="0 123.5 595 718.5" bitmap="3"/>
+<text matrix="1 0 0 1 0 8" transformations="translations" pos="96 640" stroke="black" type="minipage" width="48" height="10.212" depth="5.23" valign="top" size="footnote" style="center">Sunny/
+Overcast</text>
+<text matrix="1 0 0 1 0 -4" transformations="translations" pos="96 584" stroke="black" type="minipage" width="48" height="5.996" depth="1" valign="top" size="footnote" style="center">Long-term</text>
+<text transformations="translations" pos="96 520" stroke="black" type="minipage" width="48" height="10.212" depth="5.23" valign="top" size="footnote" style="center">Winter/
+Summer</text>
+<text transformations="translations" pos="96 456" stroke="black" type="minipage" width="48" height="6.48" depth="1.49" valign="top" size="footnote" style="center">Night/Day</text>
+<text matrix="1 0 0 1 0 4" transformations="translations" pos="80 392" stroke="black" type="minipage" width="64" height="14.714" depth="9.75" valign="top" size="footnote" style="center">\textbf{Closest image in reference dataset}</text>
+<text matrix="0.00019763 1 -1 0.00019763 650.826 463.875" pos="48 560" stroke="black" type="label" width="58.472" height="5.535" depth="1.55" valign="baseline" size="footnote">\textbf{Query images}</text>
+<path stroke="black" pen="0.2">
+96 416 m
+96 672 l
+</path>
+<path stroke="black" pen="0.2">
+96 608 m
+144 608 l
+</path>
+<path stroke="black" pen="0.2">
+96 544 m
+144 544 l
+</path>
+<path stroke="black" pen="0.2">
+96 480 m
+144 480 l
+</path>
+<path stroke="black" pen="0.2">
+80 416 m
+144 416 l
+</path>
+<path stroke="black" pen="0.2">
+80 416 m
+80 352 l
+144 352 l
+</path>
+<path stroke="black" pen="0.2">
+80 416 m
+80 672 l
+144 672 l
+</path>
+<path stroke="black" pen="0.2">
+144 672 m
+336 672 l
+336 352 l
+144 352 l
+</path>
 </page>
 </ipe>

@@ -1,16 +1,49 @@
 \section{Experiments}
-\label{sec:results}
+\label{sec:experiments}
+
+\begin{figure}
+	\center
+	\includegraphics[width=\linewidth]{vect/dataset_ex}
+	\caption{\label{fig:dataset} \textbf{Testing sequence:} we compare our new localization method on four challenging sequences featuring radical visual changes.}
+\end{figure}
+
 \subsection{Dataset}
-\cite{Maddern2016}
+\label{subsec:dataset}
+	We use the \textit{Oxford Robotcar} public dataset~\cite{Maddern2016} because it presents, in addition to images of the city, depth measurement from lidar. The learned descriptors have as main modality image and as side information depth from a laser scan. This dataset also has a temporal redundancy: 100 repetitions of a consistent route captured over a period of one year. So we can exploit data about the same place at different periods of time, which is essential to train an image descriptor based on CNN.
+	
+\noindent\textbf{Training dataset.}
+	We select three separated areas as training, validation and testing zones. Three runs on the delimited path to create our training set, acquired at dates: \textit{05-19-2015, 08-28-2015} and \textit{11-10-2015}. We create 400 triplets from these four runs for networks training.	
+	
+\noindent\textbf{Testing datasets.} We propose four testing scenarios featuring challenging conditions for image based localization:
+	\paragraph{Sunny/Overcast localization:} queries have been acquired during a sunny day, whereas the reference data have been acquired one day before where the weather was overcast (query images: 261 / ref. images: 1688). 
+	\paragraph{Long-term localization:} queries have been acquired 7 mouths before the reference images under similar weather conditions.(query images: 292 / ref. images: 1080).
+	\paragraph{Winter/Summer localization:} queries have been acquired during a snowy day (query images: 112 / ref. images: 1688).
+	\paragraph{Night/Day localization:} queries have been acquired at night, resulting in radical visual changes compare to the reference images (query images: 156 / ref. images: 1688).
 
-\subsection{Short-terme localisation}
-\label{subsec:short-term}
+Query examples are presented in figure~\ref{fig:dataset}.
+	
+\noindent\textbf{Evaluation metric.} For a given query, reference images are ranked according the cosine similarity score computed over their descriptors. To evaluate the localization performances, we consider two evaluation metrics:
+	\setcounter{paragraph}{0}
+	\paragraph{Recall @N:} we plot the recall curve regarding the number $N$ of returned candidates, {\it i.e.} a query is considered well localized if one of the top $N$ retrieved images lies inside the $25m$ radius of the ground truth query position.
+	\paragraph{Top-1 recall @D} We compute the distance between the top ranked returned database image position and the query ground truth position, and report the percentage of queries located under a threshold D (from 15 to 50 meters), like in~\cite{Zamir2014}. This metric is complementary to \textit{recall @N} because it evaluates the absolute precision of the method.
+	
+\noindent\textbf{Depth map pre-processing.} Depth modality from \textit{Oxford Robotcar} dataset is extracted from the lidar point cloud. When re-projected in the image frame coordinate, it produces a sparse depth map. Deep convolutional neural networks require dense data as input, so we pre-process these sparse modality maps in order to make them dense. We employ an inpainting algorithm from~\cite{Bevilacqua2017}, that minimizes a global energy cost related to image, depth and reflectance points cloud. 
 
-\subsection{Long-terme localisation}
-\label{subsec:long-term}
+\subsection{Implementation details}
+\label{subsec:implementation}
 
-\subsection{Night to day localisation}
-\label{subsec:night_loc}
+\noindent\textbf{Architectures and pooling methods.}
 
-\subsection{Winter to summer localisation}
-\label{subsec:winter_loc}
+
+\noindent\textbf{Truncated Resnet.}
+
+\subsection{Results}
+\label{subsec:results}
+
+Short-terme localisation
+
+Long-terme localisation
+
+Night to day localisation
+
+Winter to summer localisation
