@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70206" creator="Ipe 7.2.7">
-<info created="D:20180905165342" modified="D:20180907174507"/>
+<info created="D:20180905165342" modified="D:20180910112124"/>
 <bitmap id="1" width="865" height="865" length="92406" ColorSpace="DeviceRGB" Filter="DCTDecode" BitsPerComponent="8" encoding="base64">
 /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRof
 Hh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwh
@@ -30524,43 +30524,32 @@ h
 <image matrix="0.107675 0 0 0.143343 144.033 323.625" rect="0 197.875 595 644.125" bitmap="5"/>
 <image matrix="0.107501 0 0 0.107587 208.08 338.707" rect="0 123.5 595 718.5" bitmap="10"/>
 <image matrix="0.107539 0 0 0.107553 272.034 338.716" rect="0 123.5 595 718.5" bitmap="3"/>
-<text matrix="1 0 0 1 0 8" transformations="translations" pos="96 640" stroke="black" type="minipage" width="48" height="10.212" depth="5.23" valign="top" size="footnote" style="center">Sunny/
+<text matrix="0.666667 0 0 1 40 8" transformations="translations" pos="96 640" stroke="black" type="minipage" width="48" height="7.354" depth="2.36" valign="top" size="tiny" style="center">Sunny/
 Overcast</text>
-<text matrix="1 0 0 1 0 -4" transformations="translations" pos="96 584" stroke="black" type="minipage" width="48" height="5.996" depth="1" valign="top" size="footnote" style="center">Long-term</text>
-<text transformations="translations" pos="96 520" stroke="black" type="minipage" width="48" height="10.212" depth="5.23" valign="top" size="footnote" style="center">Winter/
+<text matrix="1 0 0 1 8 -4" transformations="translations" pos="96 584" stroke="black" type="minipage" width="48" height="4.668" depth="0" valign="top" size="tiny" style="center">Long-term</text>
+<text matrix="1 0 0 1 8 0" transformations="translations" pos="96 520" stroke="black" type="minipage" width="48" height="7.354" depth="2.36" valign="top" size="tiny" style="center">Winter/
 Summer</text>
-<text transformations="translations" pos="96 456" stroke="black" type="minipage" width="48" height="6.48" depth="1.49" valign="top" size="footnote" style="center">Night/Day</text>
-<text matrix="1 0 0 1 0 4" transformations="translations" pos="80 392" stroke="black" type="minipage" width="64" height="14.714" depth="9.75" valign="top" size="footnote" style="center">\textbf{Closest image in reference dataset}</text>
-<text matrix="0.00019763 1 -1 0.00019763 650.826 463.875" pos="48 560" stroke="black" type="label" width="58.472" height="5.535" depth="1.55" valign="baseline" size="footnote">\textbf{Query images}</text>
-<path stroke="black" pen="0.2">
+<text matrix="1 0 0 1 8 0" transformations="translations" pos="96 456" stroke="black" type="minipage" width="48" height="4.981" depth="0" valign="top" size="tiny" style="center">Night/Day</text>
+<text matrix="0.00019763 1 -1 0.00019763 666.826 463.875" pos="48 560" stroke="black" type="label" width="58.472" height="5.535" depth="1.55" valign="baseline" size="footnote">\textbf{Query images}</text>
+<path matrix="1 0 0 1 16 0" stroke="black" pen="0.2">
 96 416 m
 96 672 l
 </path>
-<path stroke="black" pen="0.2">
+<path matrix="0.666667 0 0 1 48 0" stroke="black" pen="0.2">
 96 608 m
 144 608 l
 </path>
-<path stroke="black" pen="0.2">
+<path matrix="0.666667 0 0 1 48 0" stroke="black" pen="0.2">
 96 544 m
 144 544 l
 </path>
-<path stroke="black" pen="0.2">
+<path matrix="0.666667 0 0 1 48 0" stroke="black" pen="0.2">
 96 480 m
 144 480 l
 </path>
-<path stroke="black" pen="0.2">
+<path matrix="0.75 0 0 1 36 0" stroke="black" pen="0.2">
 80 416 m
 144 416 l
-</path>
-<path stroke="black" pen="0.2">
-80 416 m
-80 352 l
-144 352 l
-</path>
-<path stroke="black" pen="0.2">
-80 416 m
-80 672 l
-144 672 l
 </path>
 <path stroke="black" pen="0.2">
 144 672 m
@@ -30568,5 +30557,17 @@ Summer</text>
 336 352 l
 144 352 l
 </path>
+<path stroke="black" pen="0.2">
+144 672 m
+96 672 l
+96 352 l
+144 352 l
+</path>
+<text transformations="translations" pos="96 392" stroke="black" type="minipage" width="48" height="10.194" depth="5.22" valign="top" size="tiny" style="center">\textbf{Closest image in reference dataset}</text>
+<text transformations="translations" pos="112 632" stroke="black" type="minipage" width="32" height="4.981" depth="0" valign="top" size="tiny" style="center">(261 im.)</text>
+<text matrix="1 0 0 1 0 -64" transformations="translations" pos="112 632" stroke="black" type="minipage" width="32" height="4.981" depth="0" valign="top" size="tiny" style="center">(224 im.)</text>
+<text matrix="1 0 0 1 0 -128" transformations="translations" pos="112 632" stroke="black" type="minipage" width="32" height="4.981" depth="0" valign="top" size="tiny" style="center">(112 im.)</text>
+<text matrix="1 0 0 1 0 -188" transformations="translations" pos="112 632" stroke="black" type="minipage" width="32" height="4.981" depth="0" valign="top" size="tiny" style="center">(156 im.)</text>
+<text matrix="1 0 0 1 -8 -260" transformations="translations" pos="112 632" stroke="black" type="minipage" width="32" height="4.981" depth="0" valign="top" size="tiny" style="center">(1688 im.)</text>
 </page>
 </ipe>
