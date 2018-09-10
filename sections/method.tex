@@ -63,12 +63,19 @@ The whole system is trained according to the following equations:
 
 We can notice that encoders weights ($\theta_{I}, \theta_{D}$) optimization is unrelated to the decoder weights ($\theta_{G}$) optimization.
 
+\begin{equation}
+	\label{eq:generator}
+	\hat{z_d} =  G_{\theta_{G}}(E_{\theta_{I}}(z_i)),
+\end{equation}
+
+where $\hat{z_d}$ is the reconstructed depth map of image $z_i$ inferred by the decoder and $E_{\theta_{I}}(z_i)$ represents the deep representation of image $z_i$ computed by the encoder.
+
+
 \subsection{Fine tuning with weakly annotated data}
 \label{subsec:data}
 As we use triplet margin losses for training encoders weights $(\theta_{I}, \theta_{D})$, we need to gather images triplets. Triplets can be constructed thanks to an absolute position information about images, like GPS-tag~\cite{Arandjelovic2017,Liu2018} or by autonomous computer vision algorithm like Structure from Motion (SfM)~\cite{Godard2017,Radenovic2017,Kim2017a}. In addition, images used for triplets creation must represent the same scenes over different period of time to make the image descriptor robust to visual changes.
 
 In contrast the decoder part of our system $(\theta_{G})$ only needs image depth map aligned pair to be trained. Such data can be easily collected by a mapping mobile system, without using any post-processing. That means we have much more data available for training the decoder part of our system rather that the encoders one. We will show in practice how this can be exploited to fine tune the decoder part to deal with complex localization scenarios in part~\ref{subsec:results}.
-
 
 \input{tab/data_requirement}
 

@@ -25,8 +25,8 @@ Query examples are presented in figure~\ref{fig:dataset}.
 	
 \noindent\textbf{Evaluation metric.} For a given query, reference images are ranked according the cosine similarity score computed over their descriptors. To evaluate the localization performances, we consider two evaluation metrics:
 	\setcounter{paragraph}{0}
-	\paragraph{Recall @N:} we plot the recall curve regarding the number $N$ of returned candidates, {\it i.e.} a query is considered well localized if one of the top $N$ retrieved images lies inside the $25m$ radius of the ground truth query position.
-	\paragraph{Top-1 recall @D} We compute the distance between the top ranked returned database image position and the query ground truth position, and report the percentage of queries located under a threshold D (from 15 to 50 meters), like in~\cite{Zamir2014}. This metric qualifies the precision of the localization system.
+	\paragraph{Recall @N} we plot the recall curve regarding the number $N$ of returned candidates, {\it i.e.} a query is considered well localized if one of the top $N$ retrieved images lies inside the $25m$ radius of the ground truth query position.
+	\paragraph{Top-1 recall @D} We compute the distance between the top ranked returned database image position and the query ground truth position, and report the percentage of queries located under a threshold D (from 15 to 50 meters), like in~\cite{Zamir2014}. This metric qualifies the accuracy of the localization system.
 
 \subsection{Implementation details}
 \label{subsec:implementation}
@@ -39,11 +39,11 @@ We always use Alexnet encoder to extract features from raw depth map, reconstruc
 
 \noindent\textbf{Descriptor architectures.} We test the two state of the art image descriptor MAC~\cite{Radenovic2017} and NetVLAD~\cite{Arandjelovic2017}. MAC is a simple global pooling method that takes the maximum of each feature maps from the encoder output. MAC combined with Alexnet encoder produces a 256 dimensions descriptor, whereas combined with Resnet architecture is produce a 512 dimensions descriptor.
 
-NetVLAD is a differentiable and trainable pooling layer that mimic VLAD aggregation method. For all the experiments, we set the number of clusters to 64, resulting on a 16384 dimensions descriptor if it is used with Alexnet features and 32768 dimensions if Resnet features is used instead. The dimension of the final descriptor can be drastically reduced with PCA-whitening post-processing.
+NetVLAD is a differentiable and trainable pooling layer that mimic VLAD aggregation method. For all the experiments, we set the number of clusters to 64, resulting on a 16~384 dimensions descriptor if it is used with Alexnet features and 32~768 dimensions if Resnet features is used instead. The dimension of the final descriptor can be drastically reduced with PCA-whitening post-processing.
 
 Finally, both MAC and NetVLAD descriptors are $L_{2}$ normalized.
 
-\noindent\textbf{Truncated Resnet.} NetVLAD can be view as a pooling method that acts on local deep features densely extracted from the input image. We found that NetVLAD descriptor combined with Resnet architecture do not perform well. We argue that the spatial resolution of the features block obtained with Resnet encoder is too low compare to other architecture (for instance 13*13 for Alexnet compare to 7*7 for Resnet for an 224*224 input image). We propose a truncated version of Resnet encoder (Rt) by drooping layers after the 13th convolutional layer, thus obtaining a features block with greater spatial resolution of size 256*14*14. Recall results on the \textit{Sunny/Overcast} query set for both architectures are presented in figure~\ref{fig:trunc_resnet}. As the truncated version of Resnet encoder clearly dominated the full one, we use the truncated version for the following experiments.
+\noindent\textbf{Decoder architecture.} The decoder used in our proposal (see~\ref{fig:our_method}) is based on Unet architecture and inspired by network generator from~\cite{} (pix2pix). Dimension up-sampling is performed through inverse-convolutions layers. Decoder weights are initialized randomly.
 
 \subsection{Results}
 \label{subsec:results}
@@ -98,13 +98,19 @@ Finally, both MAC and NetVLAD descriptors are $L_{2}$ normalized.
 	
 	\end{minipage}
 
-	\caption{\label{fig:results} \textbf{Results}}
+	\caption{\label{fig:results} \textbf{Comparison of our method versus hallucination network and networks trained with only images}: our method (-o-) is superior in almost every scenario compare to hallucination network (-x-). It also beats by a significative margin networks trained with only images (\texttt{--}). NetVLAD descriptors (\textcolor{blue}{blue} and \textcolor{cyan}{cyan} curves) are superior to MAC (\textcolor{red}{red} and \textcolor{magenta}{magenta} curves), specially in term of accuracy (Recall@D curve). Night/day dataset remains the most challenging one.  Best view in colors.}
 \end{figure*}
 
-Short-terme localisation
+\noindent\textbf{Baselines.} We compare our method with two state of the art baselines:
+    \paragraph{RGB only (RGB)} networks trained only with images, without side depth map information. We test 4 variants of networks: combining Alexnet (A) or Resnet (R) encoder with MAC or NetVLAD descriptor pooling.
+    \paragraph{RGB with depth side information (RGBtD)} networks that use peer of aligned \{image/depth map\} during training step. We compare the proposed approach (our) with our adapted version of hallucination network~\cite{Hoffman2016} (hall).
 
-Long-terme localisation
+\noindent\textbf{Truncated Resnet.} We found that NetVLAD descriptor combined with Resnet architecture, \textsl{RGB + NetVLAD (R)}, do not perform well. NetVLAD can be view as a pooling method that acts on local deep features densely extracted from the input image. We argue that the spatial resolution of the features block obtained with Resnet encoder is too low compare to other architecture (for instance 13*13 for Alexnet compare to 7*7 for Resnet for an 224*224 input image). We propose a truncated version of Resnet encoder (Rt), created by drooping layers after the 13th convolutional layer. Thus we obtain a features block with greater spatial resolution: 256*14*14 compare to 512*7*7. Recall results on the \textit{Sunny/Overcast} query set for both architectures are presented in figure~\ref{fig:trunc_resnet}. As the truncated version of Resnet encoder clearly dominated the full one, we use the truncated version for the following experiments.
 
-Night to day localisation
+\noindent\textbf{Discussion.} Localization results on the four query sets are presented on figure~\ref{fig:results}. 
 
-Winter to summer localisation
+Superior compare to hallucination network.
+
+Highest increase with snow dataset.
+
+\noindent\textbf{Night to day localisation.}
