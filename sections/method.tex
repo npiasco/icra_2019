@@ -10,7 +10,7 @@
 \begin{figure}
 	\center
 	\includegraphics[width=\linewidth]{vect/hall_method}
-	\caption{\label{fig:hall_method} \textbf{Hallucination network for image descriptors learning:} we train an hallucination network, inpired from~\cite{Hoffman2016}, for the task of global image description. Unlike the proposed method (see figure~\ref{fig:our_method}), hallucination network reproduces feature maps that would have been obtained by a network trained with depth map rather than the deep map itself.}
+	\caption{\label{fig:hall_method} \textbf{Hallucination network for image descriptors learning:} we train an hallucination network, inspired from~\cite{Hoffman2016}, for the task of global image description. Unlike the proposed method (see figure~\ref{fig:our_method}), hallucination network reproduces feature maps that would have been obtained by a network trained with depth map rather than the deep map itself.}
 \end{figure}
 
 
@@ -86,7 +86,7 @@ In order to train our system, we use two different optimizers: one updating $\th
 
 \subsection{Hallucination network for image description}
 \label{subsec:hall}
-We compare our method with the state of the art system that is capable of training a system with side information, named hallucination network~\cite{Hoffman2016}. Hallucination network is originally designed for object detection and classification in an image. We adapt the work of~\cite{Hoffman2016} to create an image descriptor system beneficing for depth map side modality during training. The system is presented in figure~\ref{fig:hall_method}. The main difference with our proposal is that the side information (\textit{i.e.} the depth map) is reconstructed at a deep feature level rather than at the raw data level. We refer readers to~\cite{Hoffman2016} for more information about the hallucination network.
+We compare our method with the state of the art system that is capable of training a system with side information, named hallucination network~\cite{Hoffman2016}. Hallucination network is originally designed for object detection and classification in an image. We adapt the work of~\cite{Hoffman2016} to create an image descriptor system benefiting for depth map side modality during training. The system is presented in figure~\ref{fig:hall_method}. The main difference with our proposal is that the side information (\textit{i.e.} the depth map) is reconstructed at a deep feature level rather than at the raw data level. We refer readers to~\cite{Hoffman2016} for more information about the hallucination network.
 
 Advantage of hallucination network over our proposal is that it does not required a decoder network, resulting on a architecture lighter than ours. However, it needs a pre-training step, where image encoder and depth map encoder are trained separately from each other before a final optimization step with the hallucination part of the system. We do not need such initialization for training our system. The training procedure of the hallucination network is more complicated and required more complex data that the proposed method. Indeed in order to train the hallucination network for the task of image description we need to gather triplets of \textit{\{image, depth map\}} peer. The triplet constitution required to know the absolute position of the data~\cite{Arandjelovic2017,Liu2018}, or to use costly algorithms like Structure from Motion (SfM)~\cite{Godard2017,Radenovic2017,Kim2017a}. 
 

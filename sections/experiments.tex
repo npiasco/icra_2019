@@ -9,7 +9,7 @@
 
 \subsection{Dataset}
 \label{subsec:dataset}
-	We have tested our new method on the \textit{Oxford Robotcar} public dataset~\cite{Maddern2016}. This is a common dataset used for image based localization~\cite{}(Sattler benchmarking) and loop closure algorithm involving neural netwotks training~\cite{} (day to night for loop closure).
+	We have tested our new method on the \textit{Oxford Robotcar} public dataset~\cite{Maddern2016}. This is a common dataset used for image based localization~\cite{}(Sattler benchmarking) and loop closure algorithm involving neural networks training~\cite{} (day to night for loop closure).
 		
 \noindent\textbf{Training data.}
 	We use dataset temporal redundancy to build our images triplets to train our CNN. We build 400 triplets using three runs acquired at dates: \texttt{2015-05-19, 2015-08-28} and \texttt{2015-11-10}. We selected a different area of city Oxford than the one used for training our networks for validation.
@@ -31,7 +31,11 @@ Query examples are presented in figure~\ref{fig:dataset}.
 \subsection{Implementation details}
 \label{subsec:implementation}
 
+<<<<<<< HEAD
 For our methods implementation we use Pytorch as deep learning framework, ADAM stochastic gradient descent algorithm for the CNN training with learning rate set to 1e-4, weight decay to 1e-3 and $\lambda$ in triplet loss equations~\ref{eq:triplet_loss},~\ref{eq:depth_triplet_loss},~\ref{eq:cat_triplet_loss} equal to 0.1. We use batch size between 10 and 25 triplets depending of the size of the system to train, convergence is occurring rapidly and take around 30 to 50 epochs. We perform both positive and negative hard minning, as in~\cite{Radenovic2017}. Images and depth maps are resized to 224x224 pixels during training and testing.
+=======
+For our methods implementation we use Pytorch as deep learning framework, ADAM stochastic gradient descent algorithm for the CNN training with learning rate set to 1e-4, weight decay to 1e-3 and $\lambda$ in triplet loss equations~\ref{eq:triplet_loss},~\ref{eq:depth_triplet_loss},~\ref{eq:cat_triplet_loss} equal to 0.1. Images and depth maps are re-sized to 224x224 pixels during training and testing.
+>>>>>>> remotes/origin/sharelatex-2018-09-11-1542
 
 \noindent\textbf{Encoder architectures.} We test Alexnet (A) and Resnet18 (R) network architectures for features map extraction. We drop the last pooling layer and the fully connected part for both architectures. The size of the final features block is 256*13*13 for Alexnet and 512*7*7 for Resnet. Initial weights are the ones obtained by training the whole network on ImageNet dataset.
 
@@ -39,7 +43,7 @@ We always use Alexnet encoder to extract features from raw depth map, reconstruc
 
 \noindent\textbf{Descriptor architectures.} We test the two state of the art image descriptor MAC~\cite{Radenovic2017} and NetVLAD~\cite{Arandjelovic2017}. MAC is a simple global pooling method that takes the maximum of each feature maps from the encoder output. MAC combined with Alexnet encoder produces a 256 dimensions descriptor, whereas combined with Resnet architecture is produce a 512 dimensions descriptor.
 
-NetVLAD is a differentiable and trainable pooling layer that mimic VLAD aggregation method. For all the experiments, we set the number of clusters to 64, resulting on a 16~384 dimensions descriptor if it is used with Alexnet features and 32~768 dimensions if Resnet features is used instead. The dimension of the final descriptor can be drastically reduced with PCA-whitening post-processing.
+NetVLAD is a trainable pooling layer that mimic VLAD aggregation method. For all the experiments, we set the number of clusters to 64, resulting on a 16~384 dimensions descriptor if it is used with Alexnet features and 32~768 dimensions if Resnet features is used instead. The dimension of the final descriptor can be drastically reduced with PCA-whitening post-processing.
 
 Finally, both MAC and NetVLAD descriptors are $L_{2}$ normalized.
 
@@ -98,7 +102,7 @@ Finally, both MAC and NetVLAD descriptors are $L_{2}$ normalized.
 	
 	\end{minipage}
 
-	\caption{\label{fig:results} \textbf{Comparison of our method versus hallucination network and networks trained with only images}: our method (-o-) is superior in almost every scenario compare to hallucination network (-x-). It also beats by a significative margin networks trained with only images (\texttt{--}). NetVLAD descriptors (\textcolor{blue}{blue} and \textcolor{cyan}{cyan} curves) are superior to MAC (\textcolor{red}{red} and \textcolor{magenta}{magenta} curves), specially in term of accuracy (Recall@D curve). Night/day dataset remains the most challenging one.  Best view in colors.}
+	\caption{\label{fig:results} \textbf{Comparison of our method versus hallucination network and networks trained with only images}: our method (-o-) is superior in almost every scenario compare to hallucination network (-x-). It also beats by a significant margin networks trained with only images (\texttt{--}). NetVLAD descriptors (\textcolor{blue}{blue} and \textcolor{cyan}{cyan} curves) are superior to MAC (\textcolor{red}{red} and \textcolor{magenta}{magenta} curves), specially in term of accuracy (Recall@D curve). Night/day dataset remains the most challenging one.  Best view in colors.}
 \end{figure*}
 
 \noindent\textbf{Baselines.} We compare our method with two state of the art baselines:
@@ -116,7 +120,9 @@ Highest increase with snow dataset.
 \input{tab/depth_eval}
 \noindent\textbf{Contribution of the depth information.} To ensure a fair comparison in term of number of trainable parameters, we introduce RGB$^+$ network that has the same architecture as our proposed method. We train RGB$^+$ with images only to compare the localization results against our method that use side depth information. During the training, we only remove the loss introduced in equation~\ref{eq:generator}, and make the weights of the decoder trainable when optimizing triplets losses constraints. Results of this experiment with encoder architecture Alexnet are presented in table~\ref{tab/eval_depth}.
 
+
 \noindent\textbf{Night to day localisation.} Figure~\ref{fig:ft_night}~\ref{fig:mod_ex}
+
 \begin{figure}
 	\center
 	\begin{minipage}{0.49\linewidth}
