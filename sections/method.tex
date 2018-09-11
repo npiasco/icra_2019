@@ -17,27 +17,27 @@
 
 \subsection{Overview}
 \label{subsec:overview}
-We design a new global image description for the task of image based localization. We first extract dense feature maps from an input image with a convolutional neural network encoder ($E_I$). This feature maps is subsequently used to build a compact representation of the scene ($d_I$). State of the art features aggregation methods can be used to construct the image descriptor, such as MAC~\cite{Radenovic2017} or NetVALD~\cite{Arandjelovic2017}. We enhance this standard image descriptor with side depth map information that is only available during the training process. To do so, a deep neural fully convolutional neural network decoder ($D_G$) is used to reconstruct the corresponding depth map according to the image. The reconstructed depth is then used to extract a global depth map descriptor. We follow the same procedure used for image: we extract deep feature maps with an encoder ($E_D$) before building the descriptor ($d_D$). Finally, the image descriptor and the depth map descriptor are concatenated into a single descriptor. Figure~\ref{fig:our_method} summarizes the whole process of our new method.
+We design a new global image description for the task of image based localization. We first extract dense feature maps from an input image with a convolutional neural network encoder ($E_I$). This feature maps is subsequently used to build a compact representation of the scene ($d_I$). State of the art features aggregation methods can be used to construct the image descriptor, such as MAC~\cite{Radenovic2017} or NetVALD~\cite{Arandjelovic2017}. We enhance this standard image descriptor with side depth map information that is only available during the training process. To do so, a deep fully convolutional neural network decoder ($D_G$) is used to reconstruct the corresponding depth map according to the input image. The reconstructed depth is then used to extract a global depth map descriptor. We follow the same procedure used before: we extract deep feature maps with an encoder ($E_D$) before building the descriptor ($d_D$). Finally, the image descriptor and the depth map descriptor are concatenated into a single descriptor. Figure~\ref{fig:our_method} summarizes the whole process of our new method.
 
 \subsection{Training routine}
 \label{subsec:training}
-Trainable parameters are $\theta_{I}$ the weights of encoder and associated descriptor $\{E_I, d_I\}$, $\theta_{D}$ the weights of the encoder and following descriptor $\{E_D, d_D\}$ and $\theta_{G}$ the weights of the decoder $D_G$ used for depth map generation. 
+Trainable parameters are $\theta_{I}$ the weights of encoder and descriptor $\{E_I, d_I\}$, $\theta_{D}$ the weights of the encoder and descriptor $\{E_D, d_D\}$ and $\theta_{G}$ the weights of the decoder $D_G$ used for depth map generation. 
 
-We follow standard procedure of descriptor learning methods for training our system based on triplet margin losses. A triplet $\{q_{im}, q_{im}^+, q_{im}^-\}$ is composed of an anchor image $q_{im}$, a positive example $q_{im}^+$ representing the same scene as the anchor and an unrelated negative example $q_{im}^-$.
+For training our system, we follow standard procedure of descriptor learning based on triplet margin losses. A triplet $\{q_{im}, q_{im}^+, q_{im}^-\}$ is composed of an anchor image $q_{im}$, a positive example $q_{im}^+$ representing the same scene as the anchor and an unrelated negative example $q_{im}^-$.
 The first triplet loss acting on $\{E_I, d_I\}$ is:
 \begin{multline}
 	\label{eq:triplet_loss}
 	L_{\theta_{I}} = max\left(0, \lambda + \norm{f_{\theta_{I}}(q_{im}) - f_{\theta_{I}}(q_{im}^+)}_2  \right. \\	
 	\left. - \norm{f_{\theta_{I}}(q_{im}) - f_{\theta_{I}}(q_{im}^-)}_2 \right),
 \end{multline}
-where $f_{\theta_{I}}(x_{im})$ is the global descriptor of image $x_{im}$. $\lambda$ is an hyperparameter controlling the margin between positive and negative examples. $f_{\theta_{I}}$ can be written as:
+where $f_{\theta_{I}}(x_{im})$ is the global descriptor of image $x_{im}$ and $\lambda$ an hyper-parameter controlling the margin between positive and negative examples. $f_{\theta_{I}}$ can be written as:
 \begin{equation}
 	\label{eq:desc_details}
 	f_{\theta_{I}}(x_{im}) = d_I(E_I(x_{im})),
 \end{equation}
 where $E_I(x_{im})$ represents the deep feature maps extracted by the decoder and $d_I$ the function used to build the final descriptor from the feature.
 
-We train the depth map encoder + descriptor $\{E_D, d_D\}$ in a same manner, equation~\ref{eq:triplet_loss} becoming:
+We train the depth map encoder and descriptor $\{E_D, d_D\}$ in a same manner, equation~\ref{eq:triplet_loss} becoming:
 \begin{multline}
 	\label{eq:depth_triplet_loss}
 	L_{\theta_{D}}  = max\left(0, \lambda + \norm{f_{\theta_{D}}(\hat{q}_{depth}) - f_{\theta_{D}}(\hat{q}_{depth}^+))}_2  \right. \\	
@@ -48,15 +48,15 @@ where $f_{\theta_{D}}(x_{depth})$ is the global descriptor of depth map $x_{dept
 	\label{eq:generator}
 	\hat{x}_{depth} = D_G(E_I(x_{im})).
 \end{equation}
-Decoder $D_G$ use the deep representation of image $x_{im}$ computed by encoder $E_I$ in order to reconstruct the scene geometry. Notice that even if the encoder $E_I$ is not especially trained for depth map reconstruction, its intern representation is rich enough to be used by the decoder $D_G$ for the task of depth map inference.
+Decoder $D_G$ use the deep representation of image $x_{im}$ computed by encoder $E_I$ in order to reconstruct the scene geometry. Notice that even if the encoder $E_I$ is not especially trained for depth map reconstruction, its intern representation is rich enough to be used by the decoder $D_G$ for the task of depth map inference. We choose to use the features already computed by the first encoder $E_I$ instead of introducing another encoder for saving computational resources.
 
 The final image descriptor is trained with the following loss:
 \begin{multline}
 	\label{eq:cat_triplet_loss}
-	L_{\theta_{I},\theta_{D}} = max\left(0, \lambda + \norm{F_{\theta_{I},\theta_{D}}(q) - F_{\theta_{I},\theta_{D}}(q^+)}_2  \right. \\	
-	\left. - \norm{F_{\theta_{I},\theta_{D}}(q) - F_{\theta_{I},\theta_{D}}(q^-)}_2 \right),
+	L_{\theta_{I},\theta_{D}} = max\left(0, \lambda + \norm{F_{\theta_{I},\theta_{D}}(q_{im}) - F_{\theta_{I},\theta_{D}}(q_{im}^+)}_2  \right. \\	
+	\left. - \norm{F_{\theta_{I},\theta_{D}}(q_{im}) - F_{\theta_{I},\theta_{D}}(q_{im}^-)}_2 \right),
 \end{multline}
-where $F(x)$ denote the concatenation of image descriptor and depth map descriptor:
+where $F_{\theta_{I},\theta_{D}}(x_{im})$ denotes the concatenation of image descriptor and depth map descriptor:
 \begin{equation}
 	\label{eq:cat_function}
 	F_{\theta_{I},\theta_{D}}(x_{im}) = \left[ f_{\theta_{I}}(x_{im}), f_{\theta_{D}}(\hat{x}_{depth}) \right].
