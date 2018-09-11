@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70206" creator="Ipe 7.2.7">
-<info created="D:20180903103625" modified="D:20180907135517"/>
+<info created="D:20180903103625" modified="D:20180911135317"/>
 <bitmap id="1" width="1280" height="960" length="41573" ColorSpace="DeviceRGB" Filter="DCTDecode" BitsPerComponent="8" encoding="base64">
 /9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoM
 DAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsN
@@ -4977,10 +4977,10 @@ h
 220 752 l
 </path>
 <text matrix="1 0 0 1 100 -84" transformations="translations" pos="8 692" stroke="black" type="minipage" width="64" height="12.197" depth="7.23" valign="top" size="small" style="center">Image/Depth peer</text>
-<text matrix="1 0 0 1 404 -96" transformations="translations" pos="8 692" stroke="black" type="minipage" width="64" height="6.48" depth="1.49" valign="top" size="small" style="center">Fake depth</text>
-<text matrix="1 0 0 1 188 -140" transformations="translations" pos="8 692" stroke="black" type="minipage" width="64" height="5.607" depth="0.62" valign="top" size="small" style="center">CNN encoder</text>
-<text matrix="1 0 0 1 188 -224" transformations="translations" pos="8 692" stroke="black" type="minipage" width="64" height="5.607" depth="0.62" valign="top" size="small" style="center">CNN encoder</text>
-<text matrix="1 0 0 1 316 -48" transformations="translations" pos="8 692" stroke="black" type="minipage" width="64" height="12.197" depth="7.23" valign="top" size="small" style="center">CNN decoder (U-Net like)</text>
+<text matrix="1 0 0 1 404 -96" transformations="translations" pos="8 692" stroke="black" type="minipage" width="64" height="11.949" depth="6.98" valign="top" size="small" style="center">Reconstructed depth</text>
+<text matrix="1 0 0 1 188 -132" transformations="translations" pos="8 692" stroke="black" type="minipage" width="64" height="12.148" depth="7.18" valign="top" size="small" style="center">${E_I}$ \\(CNN encoder)</text>
+<text matrix="1 0 0 1 188 -216" transformations="translations" pos="8 692" stroke="black" type="minipage" width="64" height="12.148" depth="7.18" valign="top" size="small" style="center">$E_D$ \\(CNN encoder)</text>
+<text matrix="1 0 0 1 316 -48" transformations="translations" pos="8 692" stroke="black" type="minipage" width="64" height="12.148" depth="7.18" valign="top" size="small" style="center">$D_G$ \\(CNN decoder)</text>
 <text matrix="1 0 0 1 440 8" transformations="translations" pos="8 692" stroke="black" type="minipage" width="64" height="5.557" depth="0.57" valign="top" size="small" style="center">L1 Loss</text>
 <text matrix="1 0 0 1 404 -204" transformations="translations" pos="8 692" stroke="black" type="minipage" width="64" height="6.48" depth="1.49" valign="top" size="small" style="center">Triplet Loss</text>
 <text matrix="1 0 0 1 -48 -28" transformations="translations" pos="336 544" stroke="black" type="minipage" width="64" height="11.036" depth="6.05" valign="top" size="small" style="center">Descriptors concatenation</text>

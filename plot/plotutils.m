@@ -3,9 +3,9 @@ close all;
 clc;
 
 dataset = 'Results_snow_queries/';
-%dataset = 'Results_lt2_queries/';
-%dataset = 'Results_night_queries/';
-%dataset = 'Results_default/';
+dataset = 'Results_lt2_queries/';
+dataset = 'Results_night_queries/';
+dataset = 'Results_default/';
 root = 'data/RGBtrainD_A/';
 metrics = {'distance/'}%, 'recall/'};
 metrics = {'recall/'}%, 'recall/'};
@@ -47,8 +47,8 @@ data_3.first = 'A_2NetVLAD_BUTF.csv';
 data_3.first_prefx = 'tD (our) + NetVLAD';
 % data_3.third = ['data/RGBtrainD_A/', dataset, metric, 'A_NetVLAD_BUTF_night.csv'];
 % data_3.third_prefx = '+BUTF+Night ';
-data_3.third = 'A_NetVLAD_HALL.csv';
-data_3.third_prefx = 'tD (hall) + NetVLAD';
+data_3.second = 'A_NetVLAD_HALL.csv';
+data_3.second_prefx = 'tD (hall) + NetVLAD';
 
 data_4 = struct;
 data_4.name = 'RGB';
@@ -181,7 +181,7 @@ for j=1:length(metrics)
             legend_list{end+1} = [to_print{i}.name, to_print{i}.fourth_prefx, to_print{i}.pref];
         end
     end
-    legend(legend_list, 'location', 'southeast')
+    %legend(legend_list, 'location', 'southeast')
     xlabel(x_name)
     ylabel(y_name)
 
