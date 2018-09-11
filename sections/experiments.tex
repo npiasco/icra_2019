@@ -105,17 +105,43 @@ Finally, both MAC and NetVLAD descriptors are $L_{2}$ normalized.
     \paragraph{RGB only (RGB)} simple networks composed of encoder + descriptor trained only with images, without side depth maps information. We test 4 variants of networks: combining Alexnet (A) or Resnet (R) encoder with MAC or NetVLAD descriptor pooling.
     \paragraph{RGB with depth side information (RGBtD)} networks that use peer of aligned \{image/depth map\} during training step. We compare the proposed approach (our) with our adapted version of hallucination network~\cite{Hoffman2016} (hall). We follow training procedure of~\cite{Hoffman2016} to train the hallucination network, whereas our proposal is trained in one step from scratch. 
 
-\noindent\textbf{Truncated Resnet.} We found that NetVLAD descriptor combined with Resnet architecture, \textsl{RGB + NetVLAD (R)}, do not perform well. NetVLAD can be view as a pooling method that acts on local deep features densely extracted from the input image. We argue that the spatial resolution of the features block obtained with Resnet encoder is too low compare to other architecture (for instance 13*13 for Alexnet compare to 7*7 for Resnet for an 224*224 input image). We propose a truncated version of Resnet encoder (Rt), created by drooping layers after the 13th convolutional layer. Thus we obtain a features block with greater spatial resolution: 256*14*14 compare to 512*7*7. Recall results on the \textit{Sunny/Overcast} query set for both architectures are presented in figure~\ref{fig:trunc_resnet}. As the truncated version of Resnet encoder clearly dominated the full one, we use the truncated version for the following experiments.
+\noindent\textbf{Truncated Resnet.} We found that NetVLAD descriptor combined with Resnet architecture, RGB + NetVLAD (R), do not perform well. NetVLAD can be view as a pooling method that acts on local deep features densely extracted from the input image. We argue that the spatial resolution of the features block obtained with Resnet encoder is too low compare to other architecture (for instance 13*13 for Alexnet compare to 7*7 for Resnet for an 224*224 input image). We propose a truncated version of Resnet encoder (Rt), created by drooping layers after the 13th convolutional layer. Thus we obtain a features block with greater spatial resolution: 256*14*14 compare to 512*7*7. Recall results on the \textit{Sunny/Overcast} query set for both architectures are presented in figure~\ref{fig:trunc_resnet}. As the truncated version of Resnet encoder clearly dominated the full one, we use the truncated version for the following experiments.
 
 \noindent\textbf{Discussion.} Localization results on the four query sets are presented on figure~\ref{fig:results}. 
 
 Superior compare to hallucination network.
 
+Recall @1
+
+MAC (A) absolute +7\% /RGB +5\% /HALL
+
+NetVLAD (A) absolute +3.3\% /RGB, /HALL failed
+
+Top-1 recall @15
+
+MAC (A) ab +5.6 /MAC +2.3 /HALL
+
+NetVLAD (A) ab +1.66 /RGB
+
+NetVLAD (R) ab +0.33 /RGB
+
+Top-1 recall @50
+
+MAC (A) ab +6 /MAC +3.66 /HALL
+
+NetVLAD (A) ab +3 /RGB
+
+NetVLAD (R) ab +1 /RGB
+
 Highest increase with snow dataset.
 
-\input{tab/depth_eval}
+On snow mean R@1 increase and mean Top-1 recall @15 mean Top-1 recall @50 
+
 \noindent\textbf{Contribution of the depth information.} To ensure a fair comparison in term of number of trainable parameters, we introduce RGB$^+$ network that has the same architecture as our proposed method. We train RGB$^+$ with images only to compare the localization results against our method that use side depth information. During the training, we only remove the loss introduced in equation~\ref{eq:generator}, and make the weights of the decoder trainable when optimizing triplets losses constraints. Results of this experiment with encoder architecture Alexnet are presented in table~\ref{tab/eval_depth}.
 
+\input{tab/depth_eval}
+
+Increasing the size of the system results on a better localization (RGB$^{+}$ + MAC versus RGB + MAC) on the two easiest query sets. Surprisingly RGB$^{+}$ system decrease localization performances on the winter queries compare to RGB. The system has probably over-fitted on the training data that are visually close to the queries ``Sunny/Overcast" and ``Long-term", but visually different to ``Winter/Summer" (see figure~\ref{fig:dataset}). RGBtD + MAC system always produces higher localization results compare to RGB$^{+}$ + MAC, which shows that the side depth information provided during the system training is wisely used to describe the image. 
 
 \noindent\textbf{Night to day localisation.} Figure~\ref{fig:ft_night}~\ref{fig:mod_ex}
 
@@ -128,7 +154,7 @@ Highest increase with snow dataset.
 		\includegraphics[width=\linewidth]{plot/fig/nightft_recall}	
 	\end{minipage}
 	
-	\includegraphics[trim={100 58 165 300},clip,width=0.4\linewidth]{plot/fig/legend_night}	
+	\includegraphics[trim={100 58 165 300},clip,width=0.4\linewidth]{plot/fig/legend_night}
 	\caption{\label{fig:ft_night} \textbf{Results on Night/Day query set after fine tuning:} we are able to drastically improve localization performance for the Night/Day challenging scenario by only fine tune the decoder part of our network with weakly annotated data. Best viewed in color.}
 \end{figure}
 
