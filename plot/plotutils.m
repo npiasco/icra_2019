@@ -3,8 +3,8 @@ close all;
 clc;
 
 dataset = 'Results_snow_queries/';
-dataset = 'Results_lt2_queries/';
-dataset = 'Results_night_queries/';
+%dataset = 'Results_lt2_queries/';
+%dataset = 'Results_night_queries/';
 %dataset = 'Results_default/';
 root = 'data/RGBtrainD_A/';
 metrics = {'distance/'}%, 'recall/'};
@@ -83,7 +83,7 @@ night_val.name = 'RGB';
 night_val.pref = ' (A)';
 night_val.color = 'r';
 night_val.first = 'A_MAC_BUTF_(n).csv';
-night_val.first_prefx = 'tD + night (our) + MAC';
+night_val.first_prefx = 'tD + MAC, night fine tuning';
 %night_val.second = 'A_MAC_BUTF.csv';
 %night_val.second_prefx = 'tD (our) + MAC';
 %data_1.third = 'A_BUTF_MAC_ots_night.csv';
@@ -96,7 +96,7 @@ night_val2.name = 'RGB';
 night_val2.pref = ' (R)';
 night_val2.color = 'm';
 night_val2.first = 'R18_MAC_BUTF_(n).csv';
-night_val2.first_prefx = 'tD + night (our) + MAC';
+night_val2.first_prefx = 'tD + MAC, night fine tuning';
 night_val2.fourth = 'R18_MAC.csv';
 night_val2.fourth_prefx = '+ MAC ';
 
@@ -105,7 +105,7 @@ night_val3.name = 'RGB';
 night_val3.pref = ' (A)';
 night_val3.color = 'b';
 night_val3.first = 'A_2NetVLAD_BUTF_(n).csv';
-night_val3.first_prefx = 'tD + night (our) + NetVALD';
+night_val3.first_prefx = 'tD + NetVALD, night fine tuning';
 night_val3.fourth = 'A_NetVLAD.csv';
 night_val3.fourth_prefx = '+ NetVALD ';
 
@@ -114,12 +114,25 @@ night_val4.name = 'RGB';
 night_val4.pref = ' (Rt)';
 night_val4.color = 'c';
 night_val4.first = 'R18T_2NetVLAD_BUTF_(n).csv';
-night_val4.first_prefx = 'tD + night (our) + NetVALD';
+night_val4.first_prefx = 'tD + NetVALD, night fine tuning';
 night_val4.fourth = 'R18T_NetVLAD.csv';
 night_val4.fourth_prefx = '+ NetVALD ';
 
 
-to_print = {night_val4, night_val3, night_val2, night_val};
+data = struct;
+data.name = 'RGB';
+data.pref = ' (A)';
+data.color = 'r';
+data.first = 'A_MAC_BUTF.csv';
+data.first_prefx = 'tD (our) + MAC';
+data.second = 'A_MAC_BUTF_noD_dec.csv';
+data.second_prefx = '+ + MAC';
+%data_1.third = 'A_BUTF_MAC_ots_night.csv';
+%data_1.third_prefx = '+HALL+Night ';
+data.fourth = 'A_MAC.csv';
+data.fourth_prefx = '+ MAC ';
+
+to_print = {data_4,data_3,data_2,data_1};
 
 for j=1:length(metrics)
     metric = metrics{j};
