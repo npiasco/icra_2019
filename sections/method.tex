@@ -17,23 +17,38 @@
 
 \subsection{Overview}
 \label{subsec:overview}
-We design a new global image description for the task of image based localization. We first extract dense feature maps from an input image with a convolutional neural network encoder. This feature maps is subsequently used to build a compact representation of the scene. State of the art features aggregation methods can be used to construct the image descriptor, such as MAC~\cite{Radenovic2017} or NetVALD~\cite{Arandjelovic2017}. We enhance this standard image descriptor with side depth map information that is only available during the training process. To do so, a deep neural fully convolutional neural network decoder is used to reconstruct the corresponding depth map according to the image. The reconstructed depth is then used to extract a global depth map descriptor. We follow the same procedure used for image: we extract deep feature maps with an encoder before building the descriptor. Finally, the image descriptor and the depth map descriptor are concatenated into a single descriptor. Figure~\ref{fig:our_method} summarizes the whole process of our new method.
+We design a new global image description for the task of image based localization. We first extract dense feature maps from an input image with a convolutional neural network encoder ($E_I$). This feature maps is subsequently used to build a compact representation of the scene ($d_I$). State of the art features aggregation methods can be used to construct the image descriptor, such as MAC~\cite{Radenovic2017} or NetVALD~\cite{Arandjelovic2017}. We enhance this standard image descriptor with side depth map information that is only available during the training process. To do so, a deep neural fully convolutional neural network decoder ($D_G$) is used to reconstruct the corresponding depth map according to the image. The reconstructed depth is then used to extract a global depth map descriptor. We follow the same procedure used for image: we extract deep feature maps with an encoder ($E_D$) before building the descriptor ($d_D$). Finally, the image descriptor and the depth map descriptor are concatenated into a single descriptor. Figure~\ref{fig:our_method} summarizes the whole process of our new method.
 
 \subsection{Training routine}
 \label{subsec:training}
-We follow standard procedure of descriptor learning methods for training our system. Trainable parameters are $\theta_{I}$ the weights of the image encoder + descriptor, $\theta_{D}$ the weights of the reconstructed depth map encoder + descriptor and $\theta_{G}$ the weights of the decoder used for depth map generation. We use triplet losses as optimization function:
+Trainable parameters are $\theta_{I}$ the weights of encoder and associated descriptor $\{E_I, d_I\}$, $\theta_{D}$ the weights of the encoder and following descriptor $\{E_D, d_D\}$ and $\theta_{G}$ the weights of the decoder $D_G$ used for depth map generation. 
+
+We follow standard procedure of descriptor learning methods for training our system based on triplet margin losses. A triplet $\{q_{im}, q_{im}^+, q_{im}^-\}$ is composed of an anchor image $q_{im}$, a positive example $q_{im}^+$ representing the same scene as the anchor and an unrelated negative example $q_{im}^-$.
+The first triplet loss acting on $\{E_I, d_I\}$ is:
 \begin{multline}
 	\label{eq:triplet_loss}
-	L_{\theta_{I}} = max\left(0, \lambda + \norm{f_{\theta_{I}}(q) - f_{\theta_{I}}(q^+)}_2  \right. \\	
-	\left. - \norm{f_{\theta_{I}}(q) - f_{\theta_{I}}(q^-)}_2 \right),
+	L_{\theta_{I}} = max\left(0, \lambda + \norm{f_{\theta_{I}}(q_{im}) - f_{\theta_{I}}(q_{im}^+)}_2  \right. \\	
+	\left. - \norm{f_{\theta_{I}}(q_{im}) - f_{\theta_{I}}(q_{im}^-)}_2 \right),
 \end{multline}
-where $f_{\theta_{I}}(x)$ is the global descriptor of image $x$ and $\{q, q^+, q^-\}$ represent images triplet with $q$ the anchor, $q^+$ the positive example and $q^-$ the negative example. $\lambda$ is an hyperparameter controlling the margin between positive and negative examples. We train the depth map encoder + descriptor in a same manner, equation~\ref{eq:triplet_loss} becoming:
+where $f_{\theta_{I}}(x_{im})$ is the global descriptor of image $x_{im}$. $\lambda$ is an hyperparameter controlling the margin between positive and negative examples. $f_{\theta_{I}}$ can be written as:
+\begin{equation}
+	\label{eq:desc_details}
+	f_{\theta_{I}}(x_{im}) = d_I(E_I(x_{im})),
+\end{equation}
+where $E_I(x_{im})$ represents the deep feature maps extracted by the decoder and $d_I$ the function used to build the final descriptor from the feature.
+
+We train the depth map encoder + descriptor $\{E_D, d_D\}$ in a same manner, equation~\ref{eq:triplet_loss} becoming:
 \begin{multline}
 	\label{eq:depth_triplet_loss}
-	L_{\theta_{D}}  = max\left(0, \lambda + \norm{f_{\theta_{D}}(G(q)) - f_{\theta_{D}}(G(q^+))}_2  \right. \\	
-	\left. - \norm{f_{\theta_{D}}(G(q)) - f_{\theta_{D}}(G(q^-))}_2 \right),
+	L_{\theta_{D}}  = max\left(0, \lambda + \norm{f_{\theta_{D}}(\hat{q}_{depth}) - f_{\theta_{D}}(\hat{q}_{depth}^+))}_2  \right. \\	
+	\left. - \norm{f_{\theta_{D}}(\hat{q}_{depth}) - f_{\theta_{D}}(\hat{q}_{depth}^-)}_2 \right),
 \end{multline}
-where $f_{\theta_{D}}(x)$ is the global descriptor of depth map $x$ and $G(x)$ is the reconstructed depth map of image $x$ by the decoder.
+where $f_{\theta_{D}}(x_{depth})$ is the global descriptor of depth map $x_{depth}$ and $\hat{x}_{depth}$ is the reconstructed depth map of image $x_{im}$ by the decoder $D_G$:
+\begin{equation}
+	\label{eq:generator}
+	\hat{x}_{depth} = D_G(E_I(x_{im})).
+\end{equation}
+Decoder $D_G$ use the deep representation of image $x_{im}$ computed by encoder $E_I$ in order to reconstruct the scene geometry. Notice that even if the encoder $E_I$ is not especially trained for depth map reconstruction, its intern representation is rich enough to be used by the decoder $D_G$ for the task of depth map inference.
 
 The final image descriptor is trained with the following loss:
 \begin{multline}
@@ -44,38 +59,28 @@ The final image descriptor is trained with the following loss:
 where $F(x)$ denote the concatenation of image descriptor and depth map descriptor:
 \begin{equation}
 	\label{eq:cat_function}
-	F_{\theta_{I},\theta_{D}}(x) = \left[ f_{\theta_{I}}(x), f_{\theta_{D}}(G(x)) \right].
+	F_{\theta_{I},\theta_{D}}(x_{im}) = \left[ f_{\theta_{I}}(x_{im}), f_{\theta_{D}}(\hat{x}_{depth}) \right].
 \end{equation}
 
 In order to train the depth map generator, we use a simple $L_1$ loss function:
-\begin{equation}
-	\label{eq:l1_loss}
-	L_{\theta_{G}} = \norm{z_d - G_{\theta_{G}}(z_i)}_{1},
-\end{equation}
-where $\{z_i, z_d\}$ pair denotes image $z_i$ and corresponding depth map $z_d$.
+\begin{align*}
+	L_{\theta_{G}} &= \norm{x_{depth} - \hat{x}_{depth}}_{1}\\
+				&= \norm{x_{depth} - D_G(E_I(x_{im}))}_{1}. \numberthis \label{eq:l1_loss}
+\end{align*}
 
-The whole system is trained according to the following equations:
+The whole system is trained according to the following constraints:
 \begin{align}
-	\label{eq:sys_optimization}
-	\left( \theta_{I}, \theta_{D} \right) & := arg\,\underset{\theta_{I}, \theta_{D}}{min} \left[ L_{\theta_{I}} + L_{\theta_{D}} + L_{\theta_{I},\theta_{D}} \right], \\
-	\left( \theta_{G} \right) & := arg\,\underset{\theta_{G}}{min} \left[ L_{\theta_{G}} \right]. 
+	\left( \theta_{I}, \theta_{D} \right) & := arg\,\underset{\theta_{I}, \theta_{D}}{min} \left[ L_{\theta_{I}} + L_{\theta_{D}} + L_{\theta_{I},\theta_{D}} \right], \label{eq:sys_optimization_1} \\ 	
+	\left( \theta_{G} \right) & := arg\,\underset{\theta_{G}}{min} \left[ L_{\theta_{G}} \right]. 	\label{eq:sys_optimization_2}
 \end{align}
 
-We can notice that encoders weights ($\theta_{I}, \theta_{D}$) optimization is unrelated to the decoder weights ($\theta_{G}$) optimization.
+In order to train our system, we use two different optimizers: one updating $\theta_{I}$ and $\theta_{D}$ weights regarding constraint~\ref{eq:sys_optimization_1} and the other updating $\theta_{G}$ weights regarding constraint~\ref{eq:sys_optimization_2}. Because decoder $D_G$ is using feature maps computed by encoder $E_I$ (see equation~\ref{eq:generator}), at each optimization step on $\theta_{I}$ we need to update decoder weights $\theta_{G}$ to take in account possible changes in the image features. We finally train our entire system alternating between the optimization of weights $\{\theta_{I}, \theta_{D}\}$ and $\{\theta_G\}$ until convergence.
 
-\begin{equation}
-	\label{eq:generator}
-	\hat{z_d} =  G_{\theta_{G}}(E_{\theta_{I}}(z_i)),
-\end{equation}
-
-where $\hat{z_d}$ is the reconstructed depth map of image $z_i$ inferred by the decoder and $E_{\theta_{I}}(z_i)$ represents the deep representation of image $z_i$ computed by the encoder.
-
-
-\subsection{Fine tuning with weakly annotated data}
-\label{subsec:data}
-As we use triplet margin losses for training encoders weights $(\theta_{I}, \theta_{D})$, we need to gather images triplets. Triplets can be constructed thanks to an absolute position information about images, like GPS-tag~\cite{Arandjelovic2017,Liu2018} or by autonomous computer vision algorithm like Structure from Motion (SfM)~\cite{Godard2017,Radenovic2017,Kim2017a}. In addition, images used for triplets creation must represent the same scenes over different period of time to make the image descriptor robust to visual changes.
-
-In contrast the decoder part of our system $(\theta_{G})$ only needs image depth map aligned pair to be trained. Such data can be easily collected by a mapping mobile system, without using any post-processing. That means we have much more data available for training the decoder part of our system rather that the encoders one. We will show in practice how this can be exploited to fine tune the decoder part to deal with complex localization scenarios in part~\ref{subsec:results}.
+%\subsection{Fine tuning with weakly annotated data}
+%\label{subsec:data}
+%As we use triplet margin losses for training encoders weights $(\theta_{I}, \theta_{D})$, we need to gather images triplets. Triplets can be constructed thanks to an absolute position information about images, like GPS-tag~\cite{Arandjelovic2017,Liu2018} or by autonomous computer vision algorithm like Structure from Motion (SfM)~\cite{Godard2017,Radenovic2017,Kim2017a}. In addition, images used for triplets creation must represent the same scenes over different period of time to make the image descriptor robust to visual changes.
+%
+%In contrast the decoder part of our system $(\theta_{G})$ only needs image depth map aligned pair to be trained. Such data can be easily collected by a mapping mobile system, without using any post-processing. That means we have much more data available for training the decoder part of our system rather that the encoders one. We will show in practice how this can be exploited to fine tune the decoder part to deal with complex localization scenarios in part~\ref{subsec:results}.
 
 %\input{tab/data_requirement}
 
@@ -83,6 +88,7 @@ In contrast the decoder part of our system $(\theta_{G})$ only needs image depth
 \label{subsec:hall}
 We compare our method with the state of the art system that is capable of training a system with side information, named hallucination network~\cite{Hoffman2016}. Hallucination network is originally designed for object detection and classification in an image. We adapt the work of~\cite{Hoffman2016} to create an image descriptor system beneficing for depth map side modality during training. The system is presented in figure~\ref{fig:hall_method}. The main difference with our proposal is that the side information (\textit{i.e.} the depth map) is reconstructed at a deep feature level rather than at the raw data level. We refer readers to~\cite{Hoffman2016} for more information about the hallucination network.
 
-Advantage of hallucination network over our proposal is that it does not required a decoder network, resulting on a architecture lighter than our method. However, the training procedure of the hallucination network is more complicated and required more complex data that the proposed method. Data requirement for both methods are reported in table~\ref{tab/data}. Hallucination network needs a pre-training step, where image encoder and depth map encoder are trained separately from each other before a final optimization step with the hallucination part of the system. We do not need such initialization for training our system.
+Advantage of hallucination network over our proposal is that it does not required a decoder network, resulting on a architecture lighter than ours. However, it needs a pre-training step, where image encoder and depth map encoder are trained separately from each other before a final optimization step with the hallucination part of the system. We do not need such initialization for training our system. The training procedure of the hallucination network is more complicated and required more complex data that the proposed method. Indeed in order to train the hallucination network for the task of image description we need to gather triplets of \textit{\{image, depth map\}} peer. The triplet constitution required to know the absolute position of the data~\cite{Arandjelovic2017,Liu2018}, or to use costly algorithms like Structure from Motion (SfM)~\cite{Godard2017,Radenovic2017,Kim2017a}. 
 
+Benefit of our method over the hallucination approach is that we have tow unrelated objectives during training: learning a efficient image representation for localization and learning how to reconstruct scene geometry from an image. That means we can train different part of our system separately, with different source of data. Especially, we can improve the scene geometry reconstruction task with unlocalized \textit{\{image, depth map\}} peers. These weakly annotated data are easier to gather than triplet as we only need calibrated system capable of sensing radiometric and geometric modalities at the same time. We will show in practice how this can be exploited to fine tune the decoder part to deal with complex localization scenarios in part~\ref{subsec:results}.
 
