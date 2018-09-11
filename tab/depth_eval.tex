@@ -1,0 +1,26 @@
+{
+\renewcommand{\arraystretch}{1.2}
+\begin{table}
+	\caption{\label{tab/eval_depth} Contribution of the depth maps constraint during training.}
+	\scriptsize \center
+	\begin{tabular}{c  | c  c | c  c  c | c  c}
+	\multirow{2}{0.7cm}{\textbf{Query}\\\textbf{set}} & \multicolumn{2}{c|}{\textbf{Network}} & \multicolumn{3}{c|}{\textbf{Top-1 recall@D}} & \multicolumn{2}{c}{\textbf{Recall@N}} \\
+	\cline{2-8}
+	              								& Name & Param.  & @15 & @30 & @50 & @1 & @5\\
+	\hline
+	\multirow{3}{0.7cm}{Sunny/\\Overcast} & RGB + MAC &  &  &  &  &  &   \\
+													   	  & RGB$^{+}$ + MAC &  &  &  &  &  &   \\  
+													   	  & RGBtD + MAC &  &  &  &  &  &  \\
+   \hline
+   	\multirow{3}{0.7cm}{Long-\\term} & RGB + MAC &  &  &  &  &  &   \\
+													   	  & RGB$^{+}$ + MAC &  &  &  &  &  &   \\  
+													   	  & RGBtD + MAC &  &  &  &  &  &  \\
+   \hline
+	\multirow{3}{0.7cm}{Winter/\\Summer} & RGB + MAC &  &  &  &  &  &   \\
+													   	  & RGB$^{+}$ + MAC &  &  &  &  &  &   \\  
+													   	  & RGBtD + MAC &  &  &  &  &  &  \\
+   \hline
+
+	\end{tabular}
+\end{table}
+}

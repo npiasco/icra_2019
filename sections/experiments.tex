@@ -56,7 +56,7 @@ Finally, both MAC and NetVLAD descriptors are $L_{2}$ normalized.
 	\begin{minipage}{0.49\linewidth}
 		\includegraphics[width=\linewidth]{plot/fig/rgb_r_trunc_recall}	
 	\end{minipage}
-	\caption{\label{fig:trunc_resnet} \textbf{Truncated Resnet + NetVLAD}}
+	\caption{\label{fig:trunc_resnet} \textbf{Resnet18 (R) versus truncated Resnet18 (Rt) in combination with NetVLAD pooling:} we show the importance of spatial resolution of the deep feature maps of the encoder used with NetVLAD layer. The truncated version of Resnet18, more than two time lighter the complete one, achieve much better localization results.}
 \end{figure}
 
 \begin{figure*}
@@ -112,5 +112,8 @@ Finally, both MAC and NetVLAD descriptors are $L_{2}$ normalized.
 Superior compare to hallucination network.
 
 Highest increase with snow dataset.
+
+\input{tab/depth_eval}
+\noindent\textbf{Contribution of the depth information.} To ensure a fair comparison in term of number of trainable parameters, we introduce RGB$^+$ network that has the same architecture as our proposed method. We train RGB$^+$ with images only to compare the localization results against our method that use side depth information. During the training, we only remove the loss introduced in equation~\ref{eq:generator}, and make the weights of the decoder trainable for optimizing the triplets losses constraints. Results of this experiment with encoder architecture Alexnet are presented in table~\ref{tab/eval_depth}.
 
 \noindent\textbf{Night to day localisation.}
