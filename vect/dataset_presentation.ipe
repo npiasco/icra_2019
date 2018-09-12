@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70206" creator="Ipe 7.2.7">
-<info created="D:20180905165342" modified="D:20180910112124"/>
+<info created="D:20180905165342" modified="D:20180912142656"/>
 <bitmap id="1" width="865" height="865" length="92406" ColorSpace="DeviceRGB" Filter="DCTDecode" BitsPerComponent="8" encoding="base64">
 /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRof
 Hh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwh
@@ -1716,7 +1716,7 @@ Ff8A19JJ9/8ACiihDGp2qZv9SKKKmRURn8a/SnyfeH0ooqyGT2/+peon6GiiktxvYRfuGmD7
 qKKKYBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABTJPuGiipY0cxqn+pl+leQeJf8Aj+/Ciise
 h2R+EwKKKK0Ef//Z
 </bitmap>
-<bitmap id="2" width="870" height="870" length="106557" ColorSpace="DeviceRGB" Filter="DCTDecode" BitsPerComponent="8" encoding="base64">
+<bitmap id="3" width="870" height="870" length="106557" ColorSpace="DeviceRGB" Filter="DCTDecode" BitsPerComponent="8" encoding="base64">
 /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRof
 Hh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwh
 MjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAAR
@@ -3692,7 +3692,7 @@ uTz/AL5ZAPvdRRRSEgwokzjg9qiMrWlyCpyp7UUUdAW5LI25t68ZqSzxI5RhwaKKS3KKt3CI
 3IB4qIqQm4GiirZI+BiRmrLYkj56iiikAok3QtGwzjoagig3nIOMUUUA9id5HgHXNPDiaM8U
 UUMEZlwuHyDiiiigs//Z
 </bitmap>
-<bitmap id="3" width="870" height="870" length="95956" ColorSpace="DeviceRGB" Filter="DCTDecode" BitsPerComponent="8" encoding="base64">
+<bitmap id="5" width="870" height="870" length="95956" ColorSpace="DeviceRGB" Filter="DCTDecode" BitsPerComponent="8" encoding="base64">
 /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRof
 Hh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwh
 MjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAAR
@@ -5471,7 +5471,7 @@ VeMkDBoop9AZSV2V8Z6VcEvmx4I5FFFHUOg+PaybSKhOUk4oooEicOyDcDSF/M7YNFFIZETg
 4PNRMnXFFFMBNm5c55pFkIO00UVLBFlVV15FV5Ygp4ooqlsBEPvCp92V5HSiikxoNu5TzUcS
 ZcgmiikxE4yp2nmnb8HBGRRRQgGug6ikD54NFFUMejkHFRS43ZHBoopdRChuKKKKYH//2Q==
 </bitmap>
-<bitmap id="4" width="1280" height="960" length="183514" ColorSpace="DeviceRGB" Filter="DCTDecode" BitsPerComponent="8" encoding="base64">
+<bitmap id="7" width="1280" height="960" length="183514" ColorSpace="DeviceRGB" Filter="DCTDecode" BitsPerComponent="8" encoding="base64">
 /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRof
 Hh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwh
 MjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAAR
@@ -8872,7 +8872,7 @@ IwrbTwCT29KXyV2AqRuPBqy0YOTGO/LH+VPWHeg3D61MpjS0KRTPIGCOoqzb28sqcL0ODVkW
 sBuOlJdeHo/Iz1DD7pGMH2rzP7QSlZnf9WVjyiTT3UAtg/Q1XaFgxXbgHk13F5oZidtqE8c5
 NYc1hh2UD5wcHHWu2liVI5p0OVn/2Q==
 </bitmap>
-<bitmap id="5" width="1280" height="960" length="149063" ColorSpace="DeviceRGB" Filter="DCTDecode" BitsPerComponent="8" encoding="base64">
+<bitmap id="9" width="1280" height="960" length="149063" ColorSpace="DeviceRGB" Filter="DCTDecode" BitsPerComponent="8" encoding="base64">
 /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRof
 Hh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwh
 MjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAAR
@@ -11635,7 +11635,7 @@ FOan2dcfnRtosBW2E0GPPWpyMmmlfyoAqMnNHHpVhl5qPZU2AiIwRigDrmpdnHtSbOaLBcjG
 Ac0EVIUweOKNnHtQBCcY96aVBHSpiuD70m3NFhkIGKToeOtSbcdKCtICLJ70m7jinMtNKmkA
 wvSFjjNKy5pMcUDAOaU/rTcCikI//9k=
 </bitmap>
-<bitmap id="6" width="870" height="870" length="116814" ColorSpace="DeviceRGB" Filter="DCTDecode" BitsPerComponent="8" encoding="base64">
+<bitmap id="11" width="870" height="870" length="116814" ColorSpace="DeviceRGB" Filter="DCTDecode" BitsPerComponent="8" encoding="base64">
 /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRof
 Hh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwh
 MjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAAR
@@ -13801,7 +13801,7 @@ I61KFBYGiitXrHUQpjUkZHzKeDTdu9yo4NFFTBJTGgDFWHtUroroWAxkciiitJxV2SNjJCAn
 kdCDQrA8EZFFFZJu6GNkTYpZT+dPRcw7xxRRUPSbRNxqSAjOO9SyKsi9MHFFFXRSkncp7Efm
 MgGDRRRVJJIzbP/Z
 </bitmap>
-<bitmap id="7" width="820" height="820" length="74289" ColorSpace="DeviceRGB" Filter="DCTDecode" BitsPerComponent="8" encoding="base64">
+<bitmap id="13" width="820" height="820" length="74289" ColorSpace="DeviceRGB" Filter="DCTDecode" BitsPerComponent="8" encoding="base64">
 /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRof
 Hh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwh
 MjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAAR
@@ -15179,7 +15179,7 @@ ndCEIhyahCAtKhCAQhCKd4SElCECIQhEA7pyEIGk8oHKEKhUvlCECWhCEAEeUIQOHZIUIQAS
 lCEDSkQhAqPCEIESIQgci0IQIeyahCgUdk7whCoAhCFAiUIQgcEhQhA1CEKhU4FCEDrTwhCB
 wKCUIQIRYUZQhAhTShCgQlIChCKEgQhVCpR3QhA7wkQhAIQhB//Z
 </bitmap>
-<bitmap id="8" width="865" height="865" length="80888" ColorSpace="DeviceRGB" Filter="DCTDecode" BitsPerComponent="8" encoding="base64">
+<bitmap id="15" width="865" height="865" length="80888" ColorSpace="DeviceRGB" Filter="DCTDecode" BitsPerComponent="8" encoding="base64">
 /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRof
 Hh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwh
 MjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAAR
@@ -16679,7 +16679,7 @@ UUUUCFpDRRQAdhS9qKKAE70poooAQ9KQdRRRQMf3ph60UUAL2oPWiimIb3oHSiikgFFL6UUU
 AI3QUCiimA4dKD0oopAIKWiihDYhprUUUxDacOtFFAC0lFFADqDRRQA09aSiigAHWn0UUwY0
 dTSDqaKKADvQetFFAAKKKKAHDpSGiigQlIaKKBoYajbvRRUlIhNQPRRUjIqKKKRR/9k=
 </bitmap>
-<bitmap id="9" width="820" height="820" length="69731" ColorSpace="DeviceRGB" Filter="DCTDecode" BitsPerComponent="8" encoding="base64">
+<bitmap id="17" width="820" height="820" length="69731" ColorSpace="DeviceRGB" Filter="DCTDecode" BitsPerComponent="8" encoding="base64">
 /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRof
 Hh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwh
 MjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAAR
@@ -17973,7 +17973,7 @@ EIInspNQhEO6KNxtCEVIcqLmhCFRDsmChCCdoPZCFAvCjXKEIIEkFTabQhBMgUoEIQgLTu0I
 QKuUihCBFNjiDVoQqJEqJKEIESQlZQhENSPZCEEfCj5QhFBQChCCYcQmShCIVqQNhCEESFWR
 RQhAJhCEAeySEIFSEIQf/9k=
 </bitmap>
-<bitmap id="10" width="865" height="865" length="99937" ColorSpace="DeviceRGB" Filter="DCTDecode" BitsPerComponent="8" encoding="base64">
+<bitmap id="19" width="865" height="865" length="99937" ColorSpace="DeviceRGB" Filter="DCTDecode" BitsPerComponent="8" encoding="base64">
 /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRof
 Hh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwh
 MjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAAR
@@ -19826,7 +19826,7 @@ Vx/Wutsf+PcfSiiq6GaJT0qG4+5RRUFFS3/1h+tWZ/8AWx0UU2Min/4/lpG/1hoopAiYfdqq
 n+sb60UUxDpv9Waxn/1340UUAtixP/x6UkH/AB7rRRUgWv4VqK460UUpFwOI8Uf6o1wt9/x7
 tRRUm3QwW6VG1FFaLYxkRd6kH3RRRTIHCk70UUmMdRRRQM//2Q==
 </bitmap>
-<bitmap id="11" width="1280" height="960" length="108543" ColorSpace="DeviceRGB" Filter="DCTDecode" BitsPerComponent="8" encoding="base64">
+<bitmap id="21" width="1280" height="960" length="108543" ColorSpace="DeviceRGB" Filter="DCTDecode" BitsPerComponent="8" encoding="base64">
 /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRof
 Hh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwh
 MjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAAR
@@ -21839,7 +21839,7 @@ IQ3FFOxRQMbtpMVIRxSYosA3FGKdR3osA3FAFOxS4osAzGaMc0+kI7UWAaRmkwRTyKMUAMpM
 VIRSYosAzFGKftoxRYBmKMU7FFKwDaMU7FJimA2jpTsUmKQDcUEU7FJQAlBpcc0UAJSUuKKA
 P//Z
 </bitmap>
-<bitmap id="12" width="870" height="870" length="74210" ColorSpace="DeviceRGB" Filter="DCTDecode" BitsPerComponent="8" encoding="base64">
+<bitmap id="23" width="870" height="870" length="74210" ColorSpace="DeviceRGB" Filter="DCTDecode" BitsPerComponent="8" encoding="base64">
 /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRof
 Hh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwh
 MjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAAR
@@ -23216,7 +23216,7 @@ mAxh3zTlYg0UUAOBJp4UMKKKBMCuKYODiiigY/qKRk9KKKAIjkd6AaKKQwIBqNk7iiimIASK
 mSQ4waKKQx2aax4oooEMJIxQW4oopjGA5pSAaKKBCgcU7YKKKAAxAc0hjFFFMQmzFOUYoooA
 kHFKetFFIBwooooA/9k=
 </bitmap>
-<bitmap id="13" width="865" height="865" length="111848" ColorSpace="DeviceRGB" Filter="DCTDecode" BitsPerComponent="8" encoding="base64">
+<bitmap id="25" width="865" height="865" length="111848" ColorSpace="DeviceRGB" Filter="DCTDecode" BitsPerComponent="8" encoding="base64">
 /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRof
 Hh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwh
 MjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAAR
@@ -25290,7 +25290,7 @@ qaQ9W+goopjew1u31qRPuv8A7tFFHQXQdB0ptx/rfxooq18LG+g1fvU5+v4UUUujF1AfcFRt
 938aKKkqQDp+NKKKKa3I6iSUR/6uiika9Ceb/j0SoB1oorSpuKG4H/V1E33RRRURF1FH3KeP
 9UPrRRQNj6KKKgR//9k=
 </bitmap>
-<bitmap id="14" width="1280" height="960" length="155756" ColorSpace="DeviceRGB" Filter="DCTDecode" BitsPerComponent="8" encoding="base64">
+<bitmap id="27" width="1280" height="960" length="155756" ColorSpace="DeviceRGB" Filter="DCTDecode" BitsPerComponent="8" encoding="base64">
 /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRof
 Hh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwh
 MjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAAR
@@ -28177,7 +28177,7 @@ YyUeZQIsGUUm/NQl6YZOeKBk5YA8daTzffiq5ck0ZHc0gLIlBo86qpalDUAWhMPxpDJnmqpf
 86QPnvRcLFsS0F8niqm/3o8wii4FvcBwetNMnHB4qt5ppDLRcCxvA5zTDJntUBfJ9KZ5uKTY
 Fvd3pobceOfrVbzM96TzMUXA/9k=
 </bitmap>
-<bitmap id="15" width="1280" height="960" length="112191" ColorSpace="DeviceRGB" Filter="DCTDecode" BitsPerComponent="8" encoding="base64">
+<bitmap id="29" width="1280" height="960" length="112191" ColorSpace="DeviceRGB" Filter="DCTDecode" BitsPerComponent="8" encoding="base64">
 /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRof
 Hh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwh
 MjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAAR
@@ -30509,21 +30509,21 @@ h
 <page>
 <layer name="alpha"/>
 <view layers="alpha" active="alpha"/>
-<image layer="alpha" matrix="0.107746 0 0 0.143492 144.025 579.575" rect="0 197.875 595 644.125" bitmap="14"/>
+<image layer="alpha" matrix="0.107746 0 0 0.143492 144.025 579.575" rect="0 197.875 595 644.125" bitmap="27"/>
 <image matrix="0.107599 0 0 0.107641 208.022 594.658" rect="0 123.5 595 718.5" bitmap="1"/>
-<image matrix="0.107544 0 0 0.107558 272.023 594.704" rect="0 123.5 595 718.5" bitmap="2"/>
-<image matrix="0.107635 0 0 0.143409 144.018 515.622" rect="0 197.875 595 644.125" bitmap="15"/>
-<image matrix="0.107377 0 0 0.107529 272.114 530.681" rect="0 123.5 595 718.5" bitmap="12"/>
-<image matrix="0.107617 0 0 0.107773 208.065 530.587" rect="0 123.5 595 718.5" bitmap="8"/>
-<image matrix="0.107549 0 0 0.143415 144.028 451.61" rect="0 197.875 595 644.125" bitmap="11"/>
-<image matrix="0.107539 0 0 0.107571 208.024 466.714" rect="0 123.5 595 718.5" bitmap="7"/>
-<image matrix="0.107457 0 0 0.107456 272.071 466.731" rect="0 123.5 595 718.5" bitmap="9"/>
-<image matrix="0.107547 0 0 0.143419 144.037 387.596" rect="0 197.875 595 644.125" bitmap="4"/>
-<image matrix="0.107538 0 0 0.107556 208.012 402.722" rect="0 123.5 595 718.5" bitmap="13"/>
-<image matrix="0.107596 0 0 0.107542 271.987 402.71" rect="0 123.5 595 718.5" bitmap="6"/>
-<image matrix="0.107675 0 0 0.143343 144.033 323.625" rect="0 197.875 595 644.125" bitmap="5"/>
-<image matrix="0.107501 0 0 0.107587 208.08 338.707" rect="0 123.5 595 718.5" bitmap="10"/>
-<image matrix="0.107539 0 0 0.107553 272.034 338.716" rect="0 123.5 595 718.5" bitmap="3"/>
+<image matrix="0.107544 0 0 0.107558 272.023 594.704" rect="0 123.5 595 718.5" bitmap="3"/>
+<image matrix="0.107635 0 0 0.143409 144.018 515.622" rect="0 197.875 595 644.125" bitmap="29"/>
+<image matrix="0.107377 0 0 0.107529 272.114 530.681" rect="0 123.5 595 718.5" bitmap="23"/>
+<image matrix="0.107617 0 0 0.107773 208.065 530.587" rect="0 123.5 595 718.5" bitmap="15"/>
+<image matrix="0.107549 0 0 0.143415 144.028 451.61" rect="0 197.875 595 644.125" bitmap="21"/>
+<image matrix="0.107539 0 0 0.107571 208.024 466.714" rect="0 123.5 595 718.5" bitmap="13"/>
+<image matrix="0.107457 0 0 0.107456 272.071 466.731" rect="0 123.5 595 718.5" bitmap="17"/>
+<image matrix="0.107547 0 0 0.143419 144.037 387.596" rect="0 197.875 595 644.125" bitmap="7"/>
+<image matrix="0.107538 0 0 0.107556 208.012 402.722" rect="0 123.5 595 718.5" bitmap="25"/>
+<image matrix="0.107596 0 0 0.107542 271.987 402.71" rect="0 123.5 595 718.5" bitmap="11"/>
+<image matrix="0.107675 0 0 0.143343 144.033 323.625" rect="0 197.875 595 644.125" bitmap="9"/>
+<image matrix="0.107501 0 0 0.107587 208.08 338.707" rect="0 123.5 595 718.5" bitmap="19"/>
+<image matrix="0.107539 0 0 0.107553 272.034 338.716" rect="0 123.5 595 718.5" bitmap="5"/>
 <text matrix="0.666667 0 0 1 40 8" transformations="translations" pos="96 640" stroke="black" type="minipage" width="48" height="7.354" depth="2.36" valign="top" size="tiny" style="center">Sunny/
 Overcast</text>
 <text matrix="1 0 0 1 8 -4" transformations="translations" pos="96 584" stroke="black" type="minipage" width="48" height="4.668" depth="0" valign="top" size="tiny" style="center">Long-term</text>
@@ -30569,5 +30569,59 @@ Summer</text>
 <text matrix="1 0 0 1 0 -128" transformations="translations" pos="112 632" stroke="black" type="minipage" width="32" height="4.981" depth="0" valign="top" size="tiny" style="center">(112 im.)</text>
 <text matrix="1 0 0 1 0 -188" transformations="translations" pos="112 632" stroke="black" type="minipage" width="32" height="4.981" depth="0" valign="top" size="tiny" style="center">(156 im.)</text>
 <text matrix="1 0 0 1 -8 -260" transformations="translations" pos="112 632" stroke="black" type="minipage" width="32" height="4.981" depth="0" valign="top" size="tiny" style="center">(1688 im.)</text>
+</page>
+<page>
+<layer name="alpha"/>
+<view layers="alpha" active="alpha"/>
+<image layer="alpha" matrix="0.107746 0 0 0.143492 208.025 563.575" rect="0 197.875 595 644.125" bitmap="27"/>
+<image matrix="0.107599 0 0 0.107641 272.022 578.658" rect="0 123.5 595 718.5" bitmap="1"/>
+<image matrix="0.107544 0 0 0.107558 336.023 578.704" rect="0 123.5 595 718.5" bitmap="3"/>
+<image matrix="0.107635 0 0 0.143409 208.018 507.622" rect="0 197.875 595 644.125" bitmap="29"/>
+<image matrix="0.107377 0 0 0.107529 336.114 522.681" rect="0 123.5 595 718.5" bitmap="23"/>
+<image matrix="0.107617 0 0 0.107773 272.065 522.587" rect="0 123.5 595 718.5" bitmap="15"/>
+<image matrix="0.107549 0 0 0.143415 208.028 451.61" rect="0 197.875 595 644.125" bitmap="21"/>
+<image matrix="0.107539 0 0 0.107571 272.024 466.714" rect="0 123.5 595 718.5" bitmap="13"/>
+<image matrix="0.107457 0 0 0.107456 336.071 466.731" rect="0 123.5 595 718.5" bitmap="17"/>
+<image matrix="0.107547 0 0 0.143419 208.037 395.596" rect="0 197.875 595 644.125" bitmap="7"/>
+<image matrix="0.107538 0 0 0.107556 272.012 410.722" rect="0 123.5 595 718.5" bitmap="25"/>
+<image matrix="0.107596 0 0 0.107542 335.987 410.71" rect="0 123.5 595 718.5" bitmap="11"/>
+<image matrix="0.107675 0 0 0.143343 208.033 339.625" rect="0 197.875 595 644.125" bitmap="9"/>
+<image matrix="0.107501 0 0 0.107587 272.08 354.707" rect="0 123.5 595 718.5" bitmap="19"/>
+<image matrix="0.107539 0 0 0.107553 336.034 354.716" rect="0 123.5 595 718.5" bitmap="5"/>
+<text matrix="0.666667 0 0 1 104 -4" transformations="translations" pos="96 640" stroke="black" type="minipage" width="48" height="7.354" depth="2.36" valign="top" size="tiny" style="center">Sunny/
+Overcast</text>
+<text matrix="1 0 0 1 72 -4" transformations="translations" pos="96 584" stroke="black" type="minipage" width="48" height="4.668" depth="0" valign="top" size="tiny" style="center">Long-term</text>
+<text matrix="1 0 0 1 72 8" transformations="translations" pos="96 520" stroke="black" type="minipage" width="48" height="7.354" depth="2.36" valign="top" size="tiny" style="center">Winter/
+Summer</text>
+<text matrix="1 0 0 1 72 16" transformations="translations" pos="96 456" stroke="black" type="minipage" width="48" height="4.981" depth="0" valign="top" size="tiny" style="center">Night/Day</text>
+<text matrix="0.00019763 1 -1 0.00019763 730.826 467.875" pos="48 560" stroke="black" type="label" width="58.472" height="5.535" depth="1.55" valign="baseline" size="footnote">\textbf{Query images}</text>
+<path matrix="1 0 0 0.875 80 68" stroke="black" pen="0.2">
+96 416 m
+96 672 l
+</path>
+<path matrix="0.75 0 0 1 100 16" stroke="black" pen="0.2">
+80 416 m
+144 416 l
+</path>
+<text matrix="1 0 0 1 64 24" transformations="translations" pos="96 392" stroke="black" type="minipage" width="48" height="10.194" depth="5.22" valign="top" size="tiny" style="center">\textbf{Closest image in reference dataset}</text>
+<text matrix="1 0 0 1 64 -12" transformations="translations" pos="112 632" stroke="black" type="minipage" width="32" height="4.981" depth="0" valign="top" size="tiny" style="center">(261 im.)</text>
+<text matrix="1 0 0 1 64 -64" transformations="translations" pos="112 632" stroke="black" type="minipage" width="32" height="4.981" depth="0" valign="top" size="tiny" style="center">(224 im.)</text>
+<text matrix="1 0 0 1 64 -120" transformations="translations" pos="112 632" stroke="black" type="minipage" width="32" height="4.981" depth="0" valign="top" size="tiny" style="center">(112 im.)</text>
+<text matrix="1 0 0 1 64 -172" transformations="translations" pos="112 632" stroke="black" type="minipage" width="32" height="4.981" depth="0" valign="top" size="tiny" style="center">(156 im.)</text>
+<text matrix="1 0 0 1 56 -236" transformations="translations" pos="112 632" stroke="black" type="minipage" width="32" height="4.981" depth="0" valign="top" size="tiny" style="center">(1688 im.)</text>
+<path matrix="1.0625 0 0 1.5 -21 -188" fill="white">
+208 376 m
+208 368 l
+400 368 l
+400 376 l
+h
+</path>
+<path stroke="black" pen="0.2">
+160 656 m
+160 376 l
+400 376 l
+400 656 l
+h
+</path>
 </page>
 </ipe>
