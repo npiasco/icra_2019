@@ -13,8 +13,6 @@
 	\caption{\label{fig:hall_method} \textbf{Hallucination network for image descriptors learning:} we train an hallucination network, inspired from~\cite{Hoffman2016}, for the task of global image description. Unlike the proposed method (see figure~\ref{fig:our_method}), hallucination network reproduces feature maps that would have been obtained by a network trained with depth map rather than the deep map itself.}
 \end{figure}
 
-
-
 \subsection{Overview}
 \label{subsec:overview}
 We design a new global image description for the task of image based localization. We first extract dense feature maps from an input image with a convolutional neural network encoder ($E_I$). This feature maps is subsequently used to build a compact representation of the scene ($d_I$). State of the art features aggregation methods can be used to construct the image descriptor, such as MAC~\cite{Radenovic2017} or NetVALD~\cite{Arandjelovic2017}. We enhance this standard image descriptor with side depth map information that is only available during the training process. To do so, a deep fully convolutional neural network decoder ($D_G$) is used to reconstruct the corresponding depth map according to the input image. The reconstructed depth is then used to extract a global depth map descriptor. We follow the same procedure used before: we extract deep feature maps with an encoder ($E_D$) before building the descriptor ($d_D$). Finally, the image descriptor and the depth map descriptor are concatenated into a single descriptor. Figure~\ref{fig:our_method} summarizes the whole process of our new method.
