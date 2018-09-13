@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70206" creator="Ipe 7.2.7">
-<info created="D:20180911113828" modified="D:20180911115235"/>
+<info created="D:20180911113828" modified="D:20180914000705"/>
 <bitmap id="1" width="1433" height="356" length="110786" ColorSpace="DeviceRGB" Filter="DCTDecode" BitsPerComponent="8" encoding="base64">
 /9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoM
 DAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsN
@@ -8747,31 +8747,38 @@ h
 <layer name="alpha"/>
 <view layers="alpha" active="alpha"/>
 <image layer="alpha" matrix="0.564508 0 0 0.54039 192.02 436.43" rect="0 346.885 595 495.115" bitmap="2"/>
-<image matrix="0.564508 0 0 0.539733 192.02 360.29" rect="0 347.092 595 494.908" bitmap="3"/>
-<image matrix="0.564599 0 0 0.557653 192.02 275.008" rect="0 347.092 595 494.908" bitmap="1"/>
-<image matrix="0.564611 0 0 0.557812 192.02 194.564" rect="0 347.092 595 494.908" bitmap="4"/>
+<image matrix="0.564508 0 0 0.539733 192.02 372.29" rect="0 347.092 595 494.908" bitmap="3"/>
+<image matrix="0.564599 0 0 0.557653 192.02 295.008" rect="0 347.092 595 494.908" bitmap="1"/>
+<image matrix="0.564611 0 0 0.557812 192.02 226.564" rect="0 347.092 595 494.908" bitmap="4"/>
 <text matrix="1 0 0 1 -8 0" transformations="translations" pos="144 672" stroke="black" type="minipage" width="48" height="5.996" depth="1" valign="top" size="footnote" style="center">Input images</text>
-<text matrix="1 0 0 1 -8 0" transformations="translations" pos="144 600" stroke="black" type="minipage" width="48" height="15.494" depth="10.52" valign="top" size="footnote" style="center">Ground truth depth maps</text>
-<text matrix="1 0 0 1 -8 8" transformations="translations" pos="144 520" stroke="black" type="minipage" width="48" height="20.441" depth="15.48" valign="top" size="footnote" style="center">Decoder outputs (after fine tuning)</text>
-<text matrix="1 0 0 1 -8 8" transformations="translations" pos="144 440" stroke="black" type="minipage" width="48" height="20.441" depth="15.48" valign="top" size="footnote" style="center">Decoder outputs (without fine tuning)</text>
-<path stroke="black">
+<text matrix="1 0 0 1 -8 20" transformations="translations" pos="144 600" stroke="black" type="minipage" width="48" height="15.494" depth="10.52" valign="top" size="footnote" style="center">Ground truth depth maps</text>
+<text matrix="1 0 0 1 -8 28" transformations="translations" pos="144 520" stroke="black" type="minipage" width="48" height="20.441" depth="15.48" valign="top" size="footnote" style="center">Decoder outputs (after fine tuning)</text>
+<text matrix="1 0 0 1 -8 44" transformations="translations" pos="144 440" stroke="black" type="minipage" width="48" height="20.441" depth="15.48" valign="top" size="footnote" style="center">Decoder outputs (without fine tuning)</text>
+<path matrix="1 0 0 1 0 12" stroke="black">
+128 628 m
+192 628 l
+</path>
+<path matrix="1 0 0 1 0 16" stroke="black">
+192 552 m
+128 552 l
+</path>
+<path matrix="1 0 0 1 0 28" stroke="black">
+192 472 m
+128 472 l
+</path>
+<path matrix="1.02381 0 0 1.33333 -8.57143 -128" fill="white">
+192 420 m
+192 408 l
+528 408 l
+528 420 l
+h
+</path>
+<path matrix="1 0 0 0.860759 0 98.0253" stroke="black">
 128 704 m
 528 704 l
 528 388 l
 128 388 l
 128 704 l
-</path>
-<path stroke="black">
-128 628 m
-192 628 l
-</path>
-<path stroke="black">
-192 552 m
-128 552 l
-</path>
-<path stroke="black">
-192 472 m
-128 472 l
 </path>
 </page>
 </ipe>

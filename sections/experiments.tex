@@ -43,7 +43,7 @@ NetVLAD is a trainable pooling layer that mimics VLAD aggregation method. For al
 
 Finally, both MAC and NetVLAD descriptors are $L_{2}$ normalized.
 
-\vspace{4pt}\noindent\textbf{Decoder architecture.} The decoder used in our proposal (see figure~\ref{fig:our_method}) is based on Unet architecture and inspired by network generator from~\cite{Isola2018}. Dimension up-sampling is performed through inverse-convolutions layers. Decoder weights are initialized randomly.
+\vspace{4pt}\noindent\textbf{Decoder architecture.} The decoder used in our proposal (see figure~\ref{fig:our_method}) is based on Unet architecture and inspired by network generator from~\cite{Isola2017}. Dimension up-sampling is performed through inverse-convolutions layers. Decoder weights are initialized randomly.
 
 \subsection{Results}
 \label{subsec:results}
@@ -121,12 +121,12 @@ Considering all the networks, our method show the best localization improvement 
 
 \input{tab/depth_eval}
 
-Increasing the size of the system results in a better localization (RGB$^{+}$ + MAC versus RGB + MAC) on the two easiest query sets. Surprisingly RGB$^{+}$ system decreases localization performances on the winter queries compare to RGB. The system has probably over-fitted on the training data that are visually close to queries of ``Sunny/Overcast" set and ``Long-term" set, but quiet different from the queries of ``Winter/Summer" set (see figure~\ref{fig:dataset}). Our RGBtD + MAC system always produces higher localization results compare to RGB$^{+}$ + MAC, which shows that the side depth information provided during training is wisely used to describe the image location. 
+Increasing the size of the system results in a better localization (RGB$^{+}$ + MAC versus RGB + MAC) on the two easiest query sets. Surprisingly RGB$^{+}$ system decreases localization performances on the winter queries compare to RGB. The system has probably over-fitted on the training data that are visually close to queries of ``Sunny" set and ``Long-term" set, but quiet different from the queries of ``Winter" set (see figure~\ref{fig:dataset}). Our RGBtD + MAC system always produces higher localization results compare to RGB$^{+}$ + MAC, which shows that the side depth information provided during training is wisely used to describe the image location. 
 
 \begin{figure}
 	\center
-	\includegraphics[width=\linewidth]{vect/mod_ex}	
-	\caption{\label{fig:mod_ex} \textbf{Effect of fine tuning with night images on decoder output:}. Decoder trained with daylight images is unable to reconstruct the scene geometry (bottom line). Fine tuning the network with less than 1000 peers \{image, depth map\} acquired by night highly improves appearance of the generated depth maps. Best viewed in color.}
+	\includegraphics[trim={0 15 0 0},clip,width=\linewidth]{vect/mod_ex}	
+	\caption{\label{fig:mod_ex} \textbf{Effect of fine tuning with night images on decoder output:}. Decoder trained with daylight images is unable to reconstruct the scene geometry (bottom line). Fine tuning the network with less than 1000 pairs \{image, depth map\} acquired by night highly improves appearance of the generated depth maps. Best viewed in color.}
 \end{figure}
 
 \begin{figure}
