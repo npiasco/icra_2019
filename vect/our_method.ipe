@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70206" creator="Ipe 7.2.7">
-<info created="D:20180903103625" modified="D:20180912134800"/>
+<info created="D:20180903103625" modified="D:20180913092213"/>
 <bitmap id="1" width="1280" height="960" length="41573" ColorSpace="DeviceRGB" Filter="DCTDecode" BitsPerComponent="8" encoding="base64">
 /9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoM
 DAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsN
@@ -6625,7 +6625,7 @@ h
 220 736 m
 220 752 l
 </path>
-<text matrix="1 0 0 1 84 -52" transformations="translations" pos="8 692" stroke="black" type="minipage" width="64" height="12.197" depth="7.23" valign="top" size="small" style="center">Image/Depth peer</text>
+<text matrix="1 0 0 1 84 -52" transformations="translations" pos="8 692" stroke="black" type="minipage" width="64" height="12.197" depth="7.23" valign="top" size="small" style="center">Image/Depth pair</text>
 <text matrix="1 0 0 1 388 -64" transformations="translations" pos="8 692" stroke="black" type="minipage" width="64" height="11.949" depth="6.98" valign="top" size="small" style="center">Reconstructed depth</text>
 <text matrix="1 0 0 1 172 -100" transformations="translations" pos="8 692" stroke="black" type="minipage" width="64" height="12.148" depth="7.18" valign="top" size="small" style="center">${E_I}$ \\(CNN encoder)</text>
 <text matrix="1 0 0 1 172 -184" transformations="translations" pos="8 692" stroke="black" type="minipage" width="64" height="12.148" depth="7.18" valign="top" size="small" style="center">$E_D$ \\(CNN encoder)</text>

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70206" creator="Ipe 7.2.7">
-<info created="D:20180903103625" modified="D:20180912143345"/>
+<info created="D:20180903103625" modified="D:20180913092311"/>
 <bitmap id="1" width="1280" height="960" length="41573" ColorSpace="DeviceRGB" Filter="DCTDecode" BitsPerComponent="8" encoding="base64">
 /9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoM
 DAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsN
@@ -5220,7 +5220,7 @@ h
 88 720 m
 92 720 l
 </path>
-<text matrix="1 0 0 1 88 -56" transformations="translations" pos="8 692" stroke="black" type="minipage" width="64" height="12.197" depth="7.23" valign="top" size="small" style="center">Image/Depth peer</text>
+<text matrix="1 0 0 1 88 -56" transformations="translations" pos="8 692" stroke="black" type="minipage" width="64" height="12.197" depth="7.23" valign="top" size="small" style="center">Image/Depth pair</text>
 <text matrix="1 0 0 1 216 54.4063" transformations="translations" pos="8 692" stroke="black" type="minipage" width="64" height="5.607" depth="0.62" valign="top" size="small" style="center">CNN encoder</text>
 <text matrix="1 0 0 1 216 -16" transformations="translations" pos="8 692" stroke="black" type="minipage" width="64" height="17.676" depth="12.71" valign="top" size="small" style="center">CNN encoder (Hallucination network)</text>
 <text matrix="1 0 0 1 292 -80" transformations="translations" pos="8 692" stroke="black" type="minipage" width="64" height="5.557" depth="0.57" valign="top" size="small" style="center">L1 Loss</text>

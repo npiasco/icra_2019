@@ -3,12 +3,12 @@ close all;
 clc;
 
 dataset = 'Results_snow_queries/';
-dataset = 'Results_lt2_queries/';
-dataset = 'Results_night_queries/';
-dataset = 'Results_default/';
+%dataset = 'Results_lt2_queries/';
+%dataset = 'Results_night_queries/';
+%dataset = 'Results_default/';
 root = 'data/RGBtrainD_A/';
 metrics = {'distance/'}%, 'recall/'};
-metrics = {'recall/'}%, 'recall/'};
+%metrics = {'recall/'}%, 'recall/'};
 %metric = 'recall/';
 
 data_1 = struct;
@@ -17,8 +17,8 @@ data_1.pref = ' (A)';
 data_1.color = 'r';
 data_1.first = 'A_MAC_BUTF.csv';
 data_1.first_prefx = 'tD (our) + MAC';
-data_1.second = 'A_MAC_HALL.csv';
-data_1.second_prefx = 'tD (hall) + MAC';
+%data_1.second = 'A_MAC_HALL.csv';
+%data_1.second_prefx = 'tD (hall) + MAC';
 %data_1.third = 'A_BUTF_MAC_ots_night.csv';
 %data_1.third_prefx = '+HALL+Night ';
 data_1.fourth = 'A_MAC.csv';
@@ -47,8 +47,8 @@ data_3.first = 'A_2NetVLAD_BUTF.csv';
 data_3.first_prefx = 'tD (our) + NetVLAD';
 % data_3.third = ['data/RGBtrainD_A/', dataset, metric, 'A_NetVLAD_BUTF_night.csv'];
 % data_3.third_prefx = '+BUTF+Night ';
-data_3.second = 'A_NetVLAD_HALL.csv';
-data_3.second_prefx = 'tD (hall) + NetVLAD';
+%data_3.second = 'A_NetVLAD_HALL.csv';
+%data_3.second_prefx = 'tD (hall) + NetVLAD';
 
 data_4 = struct;
 data_4.name = 'RGB';
@@ -159,7 +159,8 @@ for j=1:length(metrics)
     for i=1:length(to_print)    
         if isfield(to_print{i}, 'first')
             d = csvread([root, dataset, metric, to_print{i}.first]);
-            plot(x_axis, d(x_axis), [to_print{i}.color, '-o'], 'MarkerIndices', MarkerIndices, 'MarkerSize', 12)
+            %plot(x_axis, d(x_axis), [to_print{i}.color, '-o'], 'MarkerIndices', MarkerIndices, 'MarkerSize', 12)
+            plot(x_axis, d(x_axis), [to_print{i}.color, '-o'], 'MarkerSize', 6)
             legend_list{end+1} = [to_print{i}.name, to_print{i}.first_prefx, to_print{i}.pref];
         end
 
@@ -181,7 +182,7 @@ for j=1:length(metrics)
             legend_list{end+1} = [to_print{i}.name, to_print{i}.fourth_prefx, to_print{i}.pref];
         end
     end
-    %legend(legend_list, 'location', 'southeast')
+    legend(legend_list, 'location', 'southeast')
     xlabel(x_name)
     ylabel(y_name)
 
