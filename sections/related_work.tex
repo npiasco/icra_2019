@@ -3,7 +3,15 @@
 
 \vspace{4pt}\noindent\textbf{Image descriptor for outdoor visual localization.} Original image descriptors for image retrieval in the context of image localization are built by combining sparse features with an aggregation method, such as BoW or VLAD. Specific features re-weighting scheme dedicated to image localization have been introduced in~\cite{Arandjelovic2014}. Authors of~\cite{Sattler2016} introduce a re-ranking routine to improve the localization performances on large-scale outdoor area. More recently, \cite{Arandjelovic2017} introduces NetVLAD, a convolutional neural network that is trained to learn a well suited image representation for image localization. NetVLAD uses a fully convolutional encoder to extract from an input image dense feature maps. These maps are then send through a trainable pooling layer that builds the final descriptor. Numerous other CNN image descriptors have been proposed in the literature~\cite{Kim2017a,Gordo2017,Radenovic2017,Sunderhauf2015a,Liu2018} and achieve state of the art localization results. Therefore we use CNN image descriptors as base component in our system.
 
-\vspace{4pt}\noindent\textbf{Localization in challenging condition.} ~\cite{Sattler2018} ~\cite{Torii2015} ~\cite{Porav2018} ~\cite{Naseer2018} (image sequence + multi descriptor for graph matching) ~\cite{Schonberger2018} ~\cite{Garg2018} ~\cite{Naseer2017a}
+\vspace{4pt}\noindent\textbf{Localization in challenging condition.} 
+Image to image invariance ~\cite{Naseer2018} (image sequence + multi descriptor for graph matching) ~\cite{Garg2018} ~\cite{Porav2018}
 
-\vspace{4pt}\noindent\textbf{Learning with side information.} 
-%Recent work on side modality learning have been applied for image classification~\cite{Zhang2014}. In this work, authors exploit extra-depth information or multi-spectral channels paired with images. Gupta et al.~\cite{Gupta2016a} use RGB images to train an effective classifier for depth modality with limited number of depth examples. The \textit{supervision transfer} is operated through deep features. The same research team~\cite{Hoffman2016a} explores the benefit of adding an auxiliary modality at test time although no example have been provided for this modality during the training process. The target task was object detection and categorization and the modalities involved were image and depth. The closest work to ours has been presented in~\cite{Hoffman2016}. Authors train a deep neural network to hallucinate features from a modality only present during the training process. In a same manner, Xu et al.~\cite{xu2017learning} use recreated thermal images to improve pedestrian detection.
+Semantic consistency ~\cite{Stenborg2018} ~\cite{Toft2018} ~\cite{Naseer2017a}
+
+Geometric information ~\cite{Sattler2018} ~\cite{Torii2015} ~\cite{Schonberger2018} 
+
+\vspace{4pt}\noindent\textbf{Learning with side information.} \cite{Li2018} casting side information learning as domain adaptation problem.
+
+\cite{Hoffman2016} train a deep neural network to hallucinate features from a modality only present during the training process.
+ 
+The closest work to ours has been presented in~\cite{xu2017learning} use recreated thermal images to improve pedestrian detection.

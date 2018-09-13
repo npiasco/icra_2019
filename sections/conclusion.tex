@@ -1,10 +1,6 @@
 \section{Conclusion}
 \label{sec:conclusion}
 
-Good results for IBL especially under challenging condition (snow and night)
+We have introduced a new competitive global image descriptor designed for image localization under challenging conditions. We are able to handle visual changes in image by learning the corresponding geometry of the scene. However, our system relies on geometric information only during the training procedure and it then used on image only to produce image descriptor. We show that our proposal is much more efficent than state of the art standard localization methods~\cite{Arandjelovic2017, Radenovic2017} or method based on side information learning~\cite{Hoffman2016}. Our method performs especially well for challenging cross-season localization scenario, therefore it can be used to solve long-term place recognition problem.
 
-Well suited for place recognition 
-
-Other modality
-
-Generalizing task \cite{Kendall2017}.
+In a future work we will investigate the use of other modalities as side information sources, like the reflectance factor provided by lidars. We also want to study the generalization capability of our system, by considering a different image based localization task like direct pose regression~\cite{Brachmann2018}.
