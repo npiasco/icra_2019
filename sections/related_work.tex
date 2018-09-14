@@ -1,7 +1,7 @@
 \section{Related Work}
 \label{sec:related_work}
 
-\vspace{4pt}\noindent\textbf{Image descriptor for outdoor visual localization.} Original image descriptors for image retrieval in the context of image localization are built by combining sparse features with an aggregation method, such as BoW or VLAD. Specific features re-weighting scheme dedicated to image localization have been introduced in~\cite{Arandjelovic2014}. Authors of~\cite{Sattler2016} introduce a re-ranking routine to improve the localization performances on large-scale outdoor area. More recently, \cite{Arandjelovic2017} introduces NetVLAD, a convolutional neural network that is trained to learn a well suited image representation for image localization. NetVLAD uses a fully convolutional encoder to extract from an input image dense feature maps. These maps are then send through a trainable pooling layer that builds the final descriptor. Numerous other CNN image descriptors have been proposed in the literature~\cite{Kim2017a,Gordo2017,Radenovic2017,Sunderhauf2015a,Liu2018} and achieve state of the art localization results. Therefore we use CNN image descriptors as base component in our system.
+\vspace{4pt}\noindent\textbf{Image descriptor for outdoor visual localization.} Original image descriptors for image retrieval in the context of image localization are usually built by combining sparse features with an aggregation method, such as BoW or VLAD. Specific features re-weighting scheme dedicated to image localization have been introduced in~\cite{Arandjelovic2014}. Authors of~\cite{Sattler2016} introduce a re-ranking routine to improve the localization performances on large-scale outdoor area. More recently, \cite{Arandjelovic2017} introduces NetVLAD, a convolutional neural network that is trained to learn a well suited image representation for image localization. NetVLAD uses a fully convolutional encoder to extract from an input image dense feature maps. These maps are then send through a trainable pooling layer that builds the final descriptor. Numerous other CNN image descriptors have been proposed in the literature~\cite{Kim2017a,Gordo2017,Radenovic2017,Sunderhauf2015a,Liu2018} and achieve state of the art localization results. Therefore we use CNN image descriptors as base component in our system.
 
 \vspace{4pt}\noindent\textbf{Localization in challenging condition.} 
 Image to image invariance  ~\cite{Naseer2018} (image sequence + multi descriptor for graph matching) ~\cite{Garg2018} ~\cite{Porav2018}
@@ -12,6 +12,6 @@ Geometric information ~\cite{Sattler2018} ~\cite{Torii2015} ~\cite{Schonberger20
 
 \vspace{4pt}\noindent\textbf{Learning with side information.} \cite{Li2017b} casting side information learning as domain adaptation problem.
 
-\cite{Hoffman2016} train a deep neural network to hallucinate features from a modality only present during the training process.
+\cite{Hoffman2016} trains a deep neural network to hallucinate features from a modality only presented during the training process.
  
-The closest work to ours has been presented in~\cite{xu2017learning} use recreated thermal images to improve pedestrian detection.
+The closest work to ours, presented in~\cite{xu2017learning}, uses recreated thermal images to improve pedestrian detection.

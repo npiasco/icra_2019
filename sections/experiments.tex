@@ -1,7 +1,7 @@
 \begin{figure}
 	\center
 	\includegraphics[trim={0 10 0 0}, clip, width=\linewidth]{vect/dataset_ex}
-	\caption{\label{fig:dataset} \textbf{Examples of test images :} we compare our new localization method on four challenging localization sequences. The number under the query set name indicates the amount of images to localize according to the 1688 reference images.}
+	\caption{\label{fig:dataset} \textbf{Examples of test images :} we evaluate our proposal on four challenging localization sequences. The number under the query set name indicates the amount of query images to localize according to the 1688 reference images.}
 \end{figure}
 
 \section{Experiments}
@@ -9,41 +9,41 @@
 
 \subsection{Dataset}
 \label{subsec:dataset}
-	We have tested our new method on the \textit{Oxford Robotcar} public dataset~\cite{Maddern2016}. This is a common dataset used for image based localization~\cite{Sattler2018} and loop closure algorithm involving neural networks training~\cite{Porav2018}.
+	We have tested our new method on the \textit{Oxford Robotcar} public dataset~\cite{Maddern2016}. This is a common dataset used for image-based localization~\cite{Sattler2018} and loop closure algorithm involving neural networks training~\cite{Porav2018}.
 		
 \vspace{4pt}\noindent\textbf{Training data.}
-	We use dataset temporal redundancy to build our images triplets to train our CNN. We build 400 triplets using three runs acquired at dates: \texttt{2015-05-19, 2015-08-28} and \texttt{2015-11-10}. We selected a different area of city Oxford than the one used for training our networks for validation.
-	Depth modality from \textit{Oxford Robotcar} dataset is extracted from the lidar point cloud. When re-projected in the image frame coordinate, it produces a sparse depth map. Since deep convolutional neural networks require dense data as input, we pre-process these sparse modality maps with inpainting algorithm from~\cite{Bevilacqua2017} in order to make them dense.
+	We use the temporal redundancy present in the dataset to build the images triplets to train our CNN. We build 400 triplets using three runs acquired at dates: \texttt{2015-05-19, 2015-08-28} and \texttt{2015-11-10}. We selected an area of the city different from the one used for training our networks for validation.
+	Depth modality is extracted from the lidar point cloud dataset of \textit{Oxford Robotcar}. When re-projected in the image frame coordinate, it produces a sparse depth map. Since deep convolutional neural networks require dense data as input, we pre-process these sparse modality maps with inpainting algorithm from~\cite{Bevilacqua2017} in order to make them dense.
 
-\vspace{4pt}\noindent\textbf{Testing data.} We propose four testing scenarios on the same spatial area, separate from both training and validation area. Reference dataset is composed of 1688 images taken every 5 meters along a path of 2 km when the weather was overcast. The four query sets are:
+\vspace{4pt}\noindent\textbf{Testing data.} We propose four testing scenarios on the same spatial area, separate from both training and validation area. The reference dataset is composed of 1688 images taken every 5 meters along a path of 2 km, when the weather was overcast. The four query sets are:
 	\paragraph{Sunny/Overcast} queries have been acquired during a sunny day.
 	\paragraph{Long-term} queries have been acquired 7 months after the reference images under similar weather conditions.
 	\paragraph{Winter/Summer} queries have been acquired during a snowy day.
-	\paragraph{Night/Day} queries have been acquired at night, resulting in radical visual changes compare to the reference images.
+	\paragraph{Night/Day} queries have been acquired at night, resulting in radical visual changes compared to the reference images.
 
 Query examples are presented in figure~\ref{fig:dataset}.
 	
-\vspace{4pt}\noindent\textbf{Evaluation metric.} For a given query, reference images are ranked according to the cosine similarity score computed over their descriptors. To evaluate the localization performances, we consider two evaluation metrics:
+\vspace{4pt}\noindent\textbf{Evaluation metric.} For a given query, the reference images returned are ranked according to the cosine similarity score computed over their descriptors. To evaluate the localization performances, we consider two evaluation metrics:
 	\setcounter{paragraph}{0}
 	\paragraph{Recall @N} we plot the percentage of well localized queries regarding the number $N$ of returned candidates. A query is considered well localized if one of the top $N$ retrieved images lies inside the $25m$ radius of the ground truth query position.
-	\paragraph{Top-1 recall @D} We compute the distance between the top ranked returned database image position and the query ground truth position, and report the percentage of queries located under a threshold D (from 15 to 50 meters), like in~\cite{Zamir2014}. This metric qualifies the accuracy of the localization system.
+	\paragraph{Top-1 recall @D} We compute the distance between the top ranked returned database image position and the query ground truth position, and report the percentage of queries located under a threshold $D$ (from 15 to 50 meters), like in~\cite{Zamir2014}. This metric qualifies the accuracy of the localization system.
 
 \subsection{Implementation details}
 \label{subsec:implementation}
 
-For our methods implementation we use Pytorch as deep learning framework, ADAM stochastic gradient descent algorithm for the CNN training with learning rate set to 1e-4, weight decay to 1e-3 and $\lambda$ in triplet loss equations~\ref{eq:triplet_loss},~\ref{eq:depth_triplet_loss},~\ref{eq:cat_triplet_loss} equal to 0.1. We use batch size between 10 and 25 triplets depending of the size of the system to train, convergence is occurring rapidly and take around 30 to 50 epochs. We perform both positive and negative hard minning, as in~\cite{Radenovic2017}. Images and depth maps are resized to 224x224 pixels before training and testing.
+Our proposal is implemented by using Pytorch as deep learning framework, ADAM stochastic gradient descent algorithm for the CNN training with learning rate set to 1e-4, weight decay to 1e-3 and $\lambda$ in triplet loss equations~\ref{eq:triplet_loss},~\ref{eq:depth_triplet_loss},~\ref{eq:cat_triplet_loss} equal to 0.1. We use batch size between 10 and 25 triplets depending of the size of the system to train, convergence occurs rapidly and takes around 30 to 50 epochs. We perform both positive and negative hard mining, as in~\cite{Radenovic2017}. Images and depth maps are re-sized to $224\times224$ pixels before training and testing.
 
-\vspace{4pt}\noindent\textbf{Encoder architectures.} We test Alexnet (A) and Resnet18 (R) network architectures for features map extraction. We drop the last pooling layer and the fully connected part for both architectures. The size of the final features block is 256*13*13 for Alexnet and 512*7*7 for Resnet. Initial weights are the ones obtained by training the whole network on ImageNet dataset.
+\vspace{4pt}\noindent\textbf{Encoder architectures.} We test Alexnet and Resnet18 network architectures for features map extraction. We drop the last pooling layer and the fully connected part for both architectures. The size of the final features block is $256\times13\times13$ for Alexnet and $512\times7\times7$ for Resnet. Initial weights are the ones obtained by training the whole network on ImageNet dataset.
 
-We always use Alexnet encoder to extract features from raw depth map, reconstructed depth map, or hallucinated depth map. Indeed the quality of our depth map are very low, we have found that using deeper network do not significantly improves localization results.
+We always use Alexnet encoder to extract features from raw depth map, reconstructed depth map, or hallucinated depth map. Indeed the quality of our depth map is usually very low, we have found that using deeper network does not significantly improve localization results.
 
-\vspace{4pt}\noindent\textbf{Descriptor architectures.} We test the two state of the art image descriptors MAC~\cite{Radenovic2017} and NetVLAD~\cite{Arandjelovic2017}. MAC is a simple global pooling method that takes the maximum of each feature map from the encoder output. MAC combined with Alexnet encoder produces a 256 dimensional descriptor, whereas combined with Resnet architecture it produces a 512 dimensional descriptor.
+\vspace{4pt}\noindent\textbf{Descriptor architectures.} We test the two state-of-the-art image descriptors MAC~\cite{Radenovic2017} and NetVLAD~\cite{Arandjelovic2017}. MAC is a simple global pooling method that takes the maximum of each feature map from the encoder output. MAC combined with Alexnet encoder produces a 256 dimensional descriptor, whereas combined with Resnet architecture it produces a 512 dimensional descriptor.
 
-NetVLAD is a trainable pooling layer that mimics VLAD aggregation method. For all the experiments, we set the number of clusters to 64, resulting in a 16~384 dimensional descriptor if it is used with Alexnet features and a 32~768 dimensional if Resnet features are used instead. The dimension of the final descriptor can be drastically reduced with PCA-whitening post-processing.
+NetVLAD is a trainable pooling layer that mimics VLAD aggregation method. For all the experiments, we set the number of clusters to 64, resulting in a 16~384 dimensional descriptor if it is used with Alexnet features and a 32~768 dimensional if Resnet features are used instead. The dimension of the final descriptor can be drastically reduced with a PCA-whitening post-processing.
 
 Finally, both MAC and NetVLAD descriptors are $L_{2}$ normalized.
 
-\vspace{4pt}\noindent\textbf{Decoder architecture.} The decoder used in our proposal (see figure~\ref{fig:our_method}) is based on Unet architecture and inspired by network generator from~\cite{Isola2017}. Dimension up-sampling is performed through inverse-convolutions layers. Decoder weights are initialized randomly.
+\vspace{4pt}\noindent\textbf{Decoder architecture.} The decoder used in our proposal is based on Unet architecture and inspired by network generator from~\cite{Isola2018}. Dimension up-sampling is performed through inverse-convolutions layers. Decoder weights are initialized randomly.
 
 \subsection{Results}
 \label{subsec:results}
@@ -56,7 +56,7 @@ Finally, both MAC and NetVLAD descriptors are $L_{2}$ normalized.
 	\begin{minipage}{0.49\linewidth}
 		\includegraphics[width=\linewidth]{plot/fig/rgb_r_trunc_recall}	
 	\end{minipage}
-	\caption{\label{fig:trunc_resnet} \textbf{Resnet18 (R) versus truncated Resnet18 (Rt) in combination with NetVLAD pooling:} we show the importance of spatial resolution of the deep feature maps of the encoder used with NetVLAD layer. The truncated version of Resnet18, more than two time lighter the complete one, achieve much better localization results.}
+	\caption{\label{fig:trunc_resnet} \textbf{Resnet18 (R) versus truncated Resnet18 (Rt) in combination with NetVLAD pooling:} we show the importance of the spatial resolution of the deep feature maps of the encoder used with NetVLAD layer. The truncated version of Resnet18, more than two times lighter the complete one, achieves much better localization results.}
 \end{figure}
 
 \begin{figure*}
@@ -101,11 +101,11 @@ Finally, both MAC and NetVLAD descriptors are $L_{2}$ normalized.
 	\caption{\label{fig:results} \textbf{Comparison of our method versus hallucination network and networks trained with only images}: our method (-o-) is superior in almost every scenario compare to hallucination network (-x-). It also beats by a significant margin networks trained with only images (\texttt{--}). NetVLAD descriptors (\textcolor{blue}{blue} and \textcolor{cyan}{cyan} curves) are superior to MAC (\textcolor{red}{red} and \textcolor{magenta}{magenta} curves), specially in term of accuracy (Recall@D curve). Night/day dataset remains the most challenging one. Best viewed in colors.}
 \end{figure*}
 
-\noindent\textbf{Baselines.} We compare our method with two state of the art baselines:
-    \paragraph{RGB only (\textbf{RGB})} simple networks composed of encoder + descriptor trained with only images, without side depth maps information. We evaluate 4 variants of networks by combining Alexnet (A) or Resnet (R) encoder with MAC or NetVLAD descriptor pooling.
-    \paragraph{RGB with Depth side information (\textbf{RGBtD})} networks that use pairs of aligned \{image/depth map\} during training step and images only at test time. We compare the proposed approach (ours) with our version of hallucination network~\cite{Hoffman2016} (hall). We follow training procedure of~\cite{Hoffman2016} to train the hallucination network, whereas our proposal is trained as explained in~\ref{subsec:training}. 
+\noindent\textbf{Baselines.} We compare our method with two state-of-the-art baselines:
+    \paragraph{RGB only (\textbf{RGB})} simple networks composed of encoder + descriptor trained with only images, without side depth maps information. We evaluate 4 variants of networks, by combining Alexnet (A) or Resnet (R) encoder with MAC or NetVLAD descriptor pooling.
+    \paragraph{RGB with Depth side information (\textbf{RGBtD})} networks that use pairs of aligned \{image/depth map\} during training step and images only at test time. We compare our proposal with our version of hallucination network~\cite{Hoffman2016} (hall). We follow training procedure of~\cite{Hoffman2016} to train the hallucination network, whereas our proposal is trained as explained in~\ref{subsec:training}. 
 
-\vspace{4pt}\noindent\textbf{Truncated Resnet.} We found that NetVLAD descriptor combined with Resnet architecture, RGB + NetVLAD (R), do not perform well. NetVLAD can be view as a pooling method that acts on local deep features densely extracted from the input image. We argue that the spatial resolution of the features block obtained with Resnet encoder is too low compare to the other architecture (for instance 13*13 for Alexnet compare to 7*7 for Resnet for an 224*224 input image). We propose a truncated version of Resnet encoder (Rt), created by drooping the end of the network after the 13th convolutional layer. Thus we obtain a feature block with greater spatial resolution: 256*14*14 compare to 512*7*7. Recall results on the \textit{Sunny/Overcast} query set for both architectures are presented in figure~\ref{fig:trunc_resnet}. As the truncated version of Resnet encoder clearly dominated the full one, we use the truncated version for the following experiments.
+\vspace{4pt}\noindent\textbf{Truncated Resnet.} We experimented that NetVLAD descriptor combined with Resnet architecture, RGB + NetVLAD (R), does not perform well. NetVLAD can be view as a pooling method that acts on local deep features densely extracted from the input image. We argue that the spatial resolution of the features block obtained with Resnet encoder is too low compared to the other architecture (for instance $13*13 for Alexnet compare to 7*7 for Resnet for an 224*224 input image). We propose a truncated version of Resnet encoder (Rt), created by drooping the end of the network after the 13th convolutional layer. Thus we obtain a feature block with greater spatial resolution: 256*14*14 compare to 512*7*7. Recall results on the \textit{Sunny/Overcast} query set for both architectures are presented in figure~\ref{fig:trunc_resnet}. As the truncated version of Resnet encoder clearly dominated the full one, we use the truncated version for the following experiments.
 
 \vspace{4pt}\noindent\textbf{Discussion.} Localization results on the four query sets are presented in figure~\ref{fig:results}.  When we use encoder architecture Alexnet combined with MAC descriptor, our system obtains a mean of +5\% on recall@1 score comparing to hallucination (on sun, long-term and winter query sets). The proposed method is also more accurate, obtaining a mean of +2.3\% on top-1 recall@15 and +3.7\% on top-1 recall@50 scores. These results demonstrate the superiority of our method compare to hallucination for the task of image localization. Both of the RGBtD approaches increase localization results compare to the RGB baseline (+7.3\% recall@1, +5.6\% top-1 recall@15, +5.9\% top-1 recall@50 for RGBtD (ours) versus RGB).
 
