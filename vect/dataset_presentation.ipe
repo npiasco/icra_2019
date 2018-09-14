@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70206" creator="Ipe 7.2.7">
-<info created="D:20180905165342" modified="D:20180912142656"/>
+<info created="D:20180905165342" modified="D:20180914144519"/>
 <bitmap id="1" width="865" height="865" length="92406" ColorSpace="DeviceRGB" Filter="DCTDecode" BitsPerComponent="8" encoding="base64">
 /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRof
 Hh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwh
@@ -30563,7 +30563,7 @@ Summer</text>
 96 352 l
 144 352 l
 </path>
-<text transformations="translations" pos="96 392" stroke="black" type="minipage" width="48" height="10.194" depth="5.22" valign="top" size="tiny" style="center">\textbf{Closest image in reference dataset}</text>
+<text matrix="1 0 0 1 0 8" transformations="translations" pos="96 392" stroke="black" type="minipage" width="48" height="13.182" depth="8.21" valign="top" size="tiny" style="center">\textbf{Ground truth closest image in reference dataset}</text>
 <text transformations="translations" pos="112 632" stroke="black" type="minipage" width="32" height="4.981" depth="0" valign="top" size="tiny" style="center">(261 im.)</text>
 <text matrix="1 0 0 1 0 -64" transformations="translations" pos="112 632" stroke="black" type="minipage" width="32" height="4.981" depth="0" valign="top" size="tiny" style="center">(224 im.)</text>
 <text matrix="1 0 0 1 0 -128" transformations="translations" pos="112 632" stroke="black" type="minipage" width="32" height="4.981" depth="0" valign="top" size="tiny" style="center">(112 im.)</text>
