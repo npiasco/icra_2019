@@ -61,10 +61,10 @@ where $F_{\theta_{I},\theta_{D}}(x_{im})$ denotes the concatenation of image des
 \end{equation}
 
 In order to train the depth map generator, we use a simple $L_1$ loss function:
-\begin{align*}
-	L_{\theta_{G}} &= \norm{x_{depth} - \hat{x}_{depth}}_{1}\\
-				&= \norm{x_{depth} - D_G(E_I(x_{im}))}_{1}. \numberthis \label{eq:l1_loss}
-\end{align*}
+\begin{equation}
+ \label{eq:l1_loss}
+	L_{\theta_{G}} = \norm{x_{depth} - \hat{x}_{depth}}_{1}.
+\end{equation}
 
 The whole system is trained according to the following constraints:
 \begin{align}
