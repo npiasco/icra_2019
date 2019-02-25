@@ -25,8 +25,8 @@ For training our system, we follow standard procedure of descriptor learning bas
 The first triplet loss acting on $\{E_I, d_I\}$ is:
 \begin{multline}
 	\label{eq:triplet_loss}
-	L_{\theta_{I}} = max\left(0, \lambda + \norm{f_{\theta_{I}}(q_{im}) - f_{\theta_{I}}(q_{im}^+)}_2  \right. \\	
-	\left. - \norm{f_{\theta_{I}}(q_{im}) - f_{\theta_{I}}(q_{im}^-)}_2 \right),
+	L_{f_{\theta_{I}}}(q_{im}, q_{im}^+, q_{im}^-) = max\left(\lambda + \norm{f_{\theta_{I}}(q_{im}) - f_{\theta_{I}}(q_{im}^+)}_2  \right. \\	
+	\left. - \norm{f_{\theta_{I}}(q_{im}) - f_{\theta_{I}}(q_{im}^-)}_2, 0 \right),
 \end{multline}
 where $f_{\theta_{I}}(x_{im})$ is the global descriptor of image $x_{im}$ and $\lambda$ an hyper-parameter controlling the margin between positive and negative examples. $f_{\theta_{I}}$ can be written as:
 \begin{equation}
@@ -35,12 +35,7 @@ where $f_{\theta_{I}}(x_{im})$ is the global descriptor of image $x_{im}$ and $\
 \end{equation}
 where $E_I(x_{im})$ represents the deep feature maps extracted by the decoder and $d_I$ the function used to build the final descriptor from the feature.
 
-We train the depth map encoder and descriptor $\{E_D, d_D\}$ in a same manner, equation~(\ref{eq:triplet_loss}) becoming:
-\begin{multline}
-	\label{eq:depth_triplet_loss}
-	L_{\theta_{D}}  = max\left(0, \lambda + \norm{f_{\theta_{D}}(\hat{q}_{depth}) - f_{\theta_{D}}(\hat{q}_{depth}^+))}_2  \right. \\	
-	\left. - \norm{f_{\theta_{D}}(\hat{q}_{depth}) - f_{\theta_{D}}(\hat{q}_{depth}^-)}_2 \right),
-\end{multline}
+We train the depth map encoder and descriptor $\{E_D, d_D\}$ in a same manner, with the triplet loss of equation~(\ref{eq:triplet_loss}), $L_{f_{\theta_{D}}}(\hat{q}_{depth}, \hat{q}_{depth}^+, \hat{q}_{depth}^-)$,
 where $f_{\theta_{D}}(x_{depth})$ is the global descriptor of depth map $x_{depth}$ and $\hat{x}_{depth}$ is the reconstructed depth map of image $x_{im}$ by the decoder $D_G$:
 \begin{equation}
 	\label{eq:generator}
@@ -48,13 +43,7 @@ where $f_{\theta_{D}}(x_{depth})$ is the global descriptor of depth map $x_{dept
 \end{equation}
 Decoder $D_G$ uses the deep representation of image $x_{im}$ computed by encoder $E_I$ in order to reconstruct the scene geometry. Notice that even if the encoder $E_I$ is not especially trained for depth map reconstruction, its intern representation is rich enough to be used by the decoder $D_G$ for the task of depth map inference. We choose to use the features already computed by the first encoder $E_I$ instead of introducing another encoder for saving computational resources.
 
-The final image descriptor is trained with the following loss:
-\begin{multline}
-	\label{eq:cat_triplet_loss}
-	L_{\theta_{I},\theta_{D}} = max\left(0, \lambda + \norm{F_{\theta_{I},\theta_{D}}(q_{im}) - F_{\theta_{I},\theta_{D}}(q_{im}^+)}_2  \right. \\	
-	\left. - \norm{F_{\theta_{I},\theta_{D}}(q_{im}) - F_{\theta_{I},\theta_{D}}(q_{im}^-)}_2 \right),
-\end{multline}
-where $F_{\theta_{I},\theta_{D}}(x_{im})$ denotes the concatenation of image descriptor and depth map descriptor:
+The final image descriptor is trained with the triplet loss $L_{F_{\theta_{I}, \theta_{D}}}({q}_{im}, {q}_{im}^+, {q}_{im}^-)$, where $F_{\theta_{I},\theta_{D}}(x_{im})$ denotes the concatenation of image descriptor and depth map descriptor:
 \begin{equation}
 	\label{eq:cat_function}
 	F_{\theta_{I},\theta_{D}}(x_{im}) = \left[ f_{\theta_{I}}(x_{im}), f_{\theta_{D}}(\hat{x}_{depth}) \right].
