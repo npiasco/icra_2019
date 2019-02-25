@@ -5,12 +5,14 @@
 	\center
 	\includegraphics[width=\linewidth]{vect/our_method-inv}
 	\caption{\label{fig:our_method} \textbf{Image descriptors training with auxiliary depth data (our work):} two encoders are used for extracting deep features map from the main image modality and the auxiliary reconstructed depth map (inferred from our deep decoder). These features are used to create intermediate descriptors that are finally concatenated in one final image descriptor.}
+	\vspace{-0.25cm}
 \end{figure}
 
 \begin{figure}
 	\center
 	\includegraphics[width=\linewidth]{vect/hall_method-inv}
-	\caption{\label{fig:hall_method} \textbf{Hallucination network for image descriptors learning:} we train an hallucination network, inspired from~\cite{Hoffman2016}, for the task of global image description. Unlike the proposed method (see figure~\ref{fig:our_method}), hallucination network reproduces feature maps that would have been obtained by a network trained with depth map rather than the deep map itself.}
+	\caption{\label{fig:hall_method} \textbf{Hallucination network for image descriptors learning:} we train an hallucination network, inspired from~\cite{Hoffman2016}, for the task of global image description. Unlike the proposed method (see figure~\ref{fig:our_method}), hallucination network reproduces feature maps that would have been obtained by a network trained with depth map rather than the depth map itself.}
+	\vspace{-0.25cm}
 \end{figure}
 
 \subsection{Overview}
@@ -43,11 +45,7 @@ where $f_{\theta_{D}}(x_{depth})$ is the global descriptor of depth map $x_{dept
 \end{equation}
 Decoder $D_G$ uses the deep representation of image $x_{im}$ computed by encoder $E_I$ in order to reconstruct the scene geometry. Notice that even if the encoder $E_I$ is not especially trained for depth map reconstruction, its intern representation is rich enough to be used by the decoder $D_G$ for the task of depth map inference. We choose to use the features already computed by the first encoder $E_I$ instead of introducing another encoder for saving computational resources.
 
-The final image descriptor is trained with the triplet loss $L_{F_{\theta_{I}, \theta_{D}}}({q}_{im}, {q}_{im}^+, {q}_{im}^-)$, where $F_{\theta_{I},\theta_{D}}(x_{im})$ denotes the concatenation of image descriptor and depth map descriptor:
-\begin{equation}
-	\label{eq:cat_function}
-	F_{\theta_{I},\theta_{D}}(x_{im}) = \left[ f_{\theta_{I}}(x_{im}), f_{\theta_{D}}(\hat{x}_{depth}) \right].
-\end{equation}
+The final image descriptor is trained with the triplet loss $L_{F_{\theta_{I}, \theta_{D}}}({q}_{im}, {q}_{im}^+, {q}_{im}^-)$, where $F_{\theta_{I},\theta_{D}}(x_{im})$ denotes the concatenation of image descriptor and depth map descriptor: $F_{\theta_{I},\theta_{D}}(x_{im}) = \left[ f_{\theta_{I}}(x_{im}), f_{\theta_{D}}(\hat{x}_{depth}) \right].$
 
 In order to train the depth map generator, we use a simple $L_1$ loss function:
 \begin{equation}
@@ -57,7 +55,7 @@ In order to train the depth map generator, we use a simple $L_1$ loss function:
 
 The whole system is trained according to the following constraints:
 \begin{align}
-	\left( \theta_{I}, \theta_{D} \right) & := arg\,\underset{\theta_{I}, \theta_{D}}{min} \left[ L_{\theta_{I}} + L_{\theta_{D}} + L_{\theta_{I},\theta_{D}} \right], \label{eq:sys_optimization_1} \\ 	
+	\left( \theta_{I}, \theta_{D} \right) & := arg\,\underset{\theta_{I}, \theta_{D}}{min} \left[ L_{f_{\theta_{I}}} + L_{f_{\theta_{D}}} + L_{F_{\theta_{I},\theta_{D}}} \right], \label{eq:sys_optimization_1} \\ 	
 	\left( \theta_{G} \right) & := arg\,\underset{\theta_{G}}{min} \left[ L_{\theta_{G}} \right]. 	\label{eq:sys_optimization_2}
 \end{align}
 

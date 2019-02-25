@@ -3,6 +3,7 @@
 	\includegraphics[width=\linewidth]{vect/dataset_ex_hori}
 %	\includegraphics[trim={0 10 0 0}, clip, width=\linewidth]{vect/dataset_ex}
 	\caption{\label{fig:dataset} \textbf{Examples of test images :} we evaluate our proposal on four challenging localization sequences. The number under the query set name indicates the amount of query images to compare against the 1688 reference images.}
+	\vspace{-0.25cm}
 \end{figure}
 
 \section{Experiments}
@@ -18,23 +19,24 @@
 
 \vspace{4pt}\noindent\textbf{Testing data.} We propose four testing scenarios on the same spatial area (different from the area used for training and validation). The reference dataset is composed of 1688 images taken every 5 meters along a path of 2 km, when the weather was overcast. The four query sets are:
 \begin{itemize}
-	\item {Sunny/Overcast} queries have been acquired during a sunny day.
-	\item {Long-term} queries have been acquired 7 months after the reference images under similar weather conditions.
-	\item {Winter/Summer} queries have been acquired during a snowy day.
-	\item {Night/Day} queries have been acquired at night, resulting in radical visual changes compared to the reference images.
+	\item {Sunny/Overcast:} queries have been acquired during a sunny day.
+	\item {Long-term:} queries have been acquired 7 months after the reference images under similar weather conditions.
+	\item {Winter/Summer:} queries have been acquired during a snowy day.
+	\item {Night/Day:} queries have been acquired at night, resulting in radical visual changes compared to the reference images.
 \end{itemize}
 
 \noindent Query examples are presented in figure~\ref{fig:dataset}.
 	
 \vspace{4pt}\noindent\textbf{Evaluation metric.} For a given query, the reference images are ranked according to the cosine similarity score computed over their descriptors. To evaluate the localization performances, we consider two evaluation metrics:
 	\setcounter{paragraph}{0}
+
 	\paragraph{Recall @N} we plot the percentage of well localized queries regarding the number $N$ of returned candidates. A query is considered well localized if one of the top $N$ retrieved images lies inside the $25m$ radius of the ground truth query position.
 	\paragraph{Top-1 recall @D} We compute the distance between the top ranked returned database image position and the query ground truth position, and report the percentage of queries located under a threshold $D$ (from 15 to 50 meters), like in~\cite{Zamir2014}. This metric qualifies the accuracy of the localization system.
 
 \subsection{Implementation details}
 \label{subsec:implementation}
 
-Our proposal is implemented by using Pytorch as deep learning framework, ADAM stochastic gradient descent algorithm for the CNN training with learning rate set to 1e-4, weight decay to 1e-3 and $\lambda$ in triplet loss equations~(\ref{eq:triplet_loss}),~(\ref{eq:depth_triplet_loss}),~(\ref{eq:cat_triplet_loss}) equal to 0.1. We use batch size between 10 and 25 triplets depending of the size of the system to train, convergence occurs rapidly and takes around 30 to 50 epochs. We perform both positive and negative hard mining, as in~\cite{Radenovic2017}. Images and depth maps are re-sized to $224\times224$ pixels before training and testing.
+Our proposal is implemented by using Pytorch as deep learning framework, ADAM stochastic gradient descent algorithm for the CNN training with learning rate set to 1e-4, weight decay to 1e-3 and $\lambda$ in triplet loss equal to 0.1. We use batch size between 10 and 25 triplets depending of the size of the system to train, convergence occurs rapidly and takes around 30 to 50 epochs. We perform both positive and negative hard mining, as in~\cite{Radenovic2017}. Images and depth maps are re-sized to $224\times224$ pixels before training and testing.
 
 \vspace{4pt}\noindent\textbf{Encoder architectures.} We test the fully convolutional part of Alexnet and Resnet18 architectures for features extraction. The size of the final features block is $256\times13\times13$ for Alexnet and $512\times7\times7$ for Resnet. Initial weights are the ones obtained by training the whole network on ImageNet dataset. We always use Alexnet encoder to extract features from raw depth map, reconstructed depth map, or hallucinated depth map. Indeed the quality of our depth map is usually very low, we have found that using deeper network does not significantly improve localization results.
 
@@ -53,7 +55,8 @@ Our proposal is implemented by using Pytorch as deep learning framework, ADAM st
 	\begin{minipage}{0.49\linewidth}
 		\includegraphics[width=\linewidth]{plot/fig/rgb_r_trunc_recall}	
 	\end{minipage}
-	\caption{\label{fig:trunc_resnet} \textbf{Resnet18 (R) versus truncated Resnet18 (Rt) in combination with NetVLAD pooling:} we show the importance of the spatial resolution of the deep feature maps of the encoder used with NetVLAD layer. The truncated version of Resnet18, more than two times lighter the complete one, achieves much better localization results.}
+	\caption{\label{fig:trunc_resnet} \textbf{Resnet18 (R) versus truncated Resnet18 (Rt) in combination with NetVLAD pooling:} we show the importance of the spatial resolution of the deep feature maps of the encoder used with NetVLAD layer. The truncated version of Resnet18, more than two times lighter than the complete one, achieves much better localization results.}
+	\vspace{-0.25cm}
 \end{figure}
 
 \begin{figure*}
@@ -96,6 +99,7 @@ Our proposal is implemented by using Pytorch as deep learning framework, ADAM st
 	\end{minipage}
 
 	\caption{\label{fig:results} \textbf{Comparison of our method versus hallucination network and networks trained with only images}: our method (-o-) is superior in almost every scenario facing hallucination network (-x-). It also beats, with a significant margin, networks trained with only images (\texttt{--}). NetVLAD descriptors (\textcolor{blue}{blue} and \textcolor{cyan}{cyan} curves) are superior to MAC (\textcolor{red}{red} and \textcolor{magenta}{magenta} curves), specially in terms of accuracy (Recall@D curve). Night/day dataset remains the most challenging one. Curves best viewed in colors.}
+	\vspace{-0.25cm}
 \end{figure*}
 
 \noindent\textbf{Baselines.} We compare our method with two state-of-the-art baselines:
@@ -104,13 +108,13 @@ Our proposal is implemented by using Pytorch as deep learning framework, ADAM st
 
 \vspace{4pt}\noindent\textbf{Truncated Resnet.} We experimented that NetVLAD descriptor combined with Resnet architecture, RGB + NetVLAD (R), does not perform well. NetVLAD can be view as a pooling method that acts on local deep features densely extracted from the input image. We argue that the spatial resolution of the features block obtained with Resnet encoder is too low compared to the other architecture (for instance $13\times13$ for Alexnet compared to $7\times7$ for Resnet for an $224\times224$ input image). We propose a truncated version of Resnet encoder (Rt), created by drooping the end of the network after the 13th convolutional layer. Thus we obtain a feature block with greater spatial resolution: $256\times14\times14$ compared to $512\times7\times7$. Recall results on the \textit{Sunny/Overcast} query set for both architectures are presented in figure~\ref{fig:trunc_resnet}. As the truncated version of Resnet encoder clearly dominates the full one, we use the truncated version for the following experiments.
 
-\vspace{4pt}\noindent\textbf{Discussion.} Localization results on the four query sets are presented in figure~\ref{fig:results}.  When we use encoder architecture Alexnet combined with MAC descriptor, our system obtains a mean of +5\% on recall@1 score comparing to hallucination (on sun, long-term and winter query sets). The proposed method is also more accurate, obtaining a mean of +2.3\% on top-1 recall@15 and +3.7\% on top-1 recall@50 scores. These results demonstrate the superiority of our method compared to hallucination for the task of image localization. Both of the RGBtD approaches increase localization results facing the RGB baseline (+7.3\% recall@1, +5.6\% top-1 recall@15, +5.9\% top-1 recall@50 for RGBtD (ours) versus RGB).
+\vspace{4pt}\noindent\textbf{Discussion.} 
+\input{tab/result_sum}
+Localization results on the four query sets are presented in figure~\ref{fig:results}. Both method trained with auxiliary depth information (hall and our) perform on average better than the RGB baseline. This shows that the geometric clues given during the training process can be efficiently used for the task of image-only retrieval for localization. Compare to hallucination network, our method shows better results, both in term of recall and precision. We report results for the hallucination network only with encoder Alexnet as we were not able to obtain stable training when using a deeper architecture. 
 
-Results show that NetVLAD pooling is much more effective than MAC. However, we have not been able to obtain convincing results for hallucination network with Alexnet encoder combined with NetVLAD pooling: reported results show decreasing performances compared to RGB + NetVLAD (A) baseline. In contrast, our proposal achieves superior localization scores with setting Alexnet encoder with NetVLAD descriptor compared to the RGB baseline: 62.85\%~/~\textbf{66.27}\% recall@1, 55.64\%~/~\textbf{57.53}\% top-1 recall@15 and 65.91\%~/~\textbf{68.46}\% top-1 recall@50  (RGB + NetVLAD (A) mean score~/~\textbf{RGBtD (ours) + NetVLAD (A)} mean score on the sun, long-term and winter query sets).
+We also report on table~\ref{tab/sum_res} localization performances for the 3 day-time datasets (sunny, long-term and winter). We obtain our best localization results by combining truncated Resnet base encoder with NetVLAD descriptor. However, for all combination of encode/decoder, our method increases the localization precision compare to the RGB baseline. This demonstrate the generalization capability of our method: we can either use lightweight architecture for online embedded localization or rely on greedier models to increase the overall localization precision. Our method only decreases the localization performances compare to the baseline when using Resnet+NetVLAD on the sunny/overcast query set. This is certainly because the training data are visually similar to the queries present in this scenario. It will be interesting to introduce attention mechanism to balance the relative importance of image and depth modality to overcome this problem.
 
-Best localization results are obtained by combining NetVLAD descriptor with truncated Resnet encoder. With this setting, our system achieves 71.53\%~/~\textbf{72.2}\% recall@1, 62.65\%~/~\textbf{63.0}\% top-1 recall@15 and 75.63\%~/~\textbf{76.0}\% top-1 recall@50  (RGB + NetVLAD (Rt) mean score~/~\textbf{RGBtD (ours) + NetVLAD (Rt)} mean score on the sun, long-term and winter query sets).
-
-Considering all the networks, our method shows the best localization improvement on the Winter/Summer query set (figure~\ref{fig:results}-b): 51.78\%~/~\textbf{56.05}\% recall@1, 48.21\%~/~\textbf{50.0}\% top-1 recall@15, 56.92\%~/~\textbf{59.38}\% top-1 recall@50  (RGB mean score~/~\textbf{RGBtD (ours)} mean score). Standard image descriptors are confused by local changes caused by the snow present on the scene whereas our descriptor remains confident by reconstructing the geometric structure of the scene. Similar results should be intended regarding Night/Day query sets (figure~\ref{fig:results}-d), however our proposal is not able to improve localization accuracy for this query set. We investigate the night to day localization scenario in the following.
+Our method shows the best localization improvement on the Winter/Summer query set. Standard image descriptors are confused by local changes caused by the snow present on the scene whereas our descriptor remains confident by reconstructing the geometric structure of the scene. Similar results should be intended regarding Night/Day query sets (figure~\ref{fig:results}-d), however our proposal is not able to improve localization accuracy for this query set. We investigate the night to day localization scenario in the following.
 
 \vspace{4pt}\noindent\textbf{Night to day localization.} Night to day localization is an extremely challenging problem: our best RGB baseline achieves less than 13\% recall@1. This can be explained by the huge difference in visual appearance between night and daytime images, as illustrated in figure~\ref{fig:dataset}. Our system should be able to improve the RGB baseline relying on the learned scene geometry, which remains the same during day and night. Unfortunately, we use training data exclusively composed of daytime images, thus making the decoder unable to reconstruct a depth map from an image taken at night. The last line of figure~\ref{fig:mod_ex} shows the poor quality of decoder output after initial training. In order to improve the decoder's performances, we propose to use weakly annotated data to fine tune the decoder part of our system. We collect 1000 pairs of image and depth map acquired at night and retrain only decoder weights $\theta_G$ using loss of equation~(\ref{eq:l1_loss}). Figure~\ref{fig:mod_ex} presents the qualitative amelioration on the inferred depth map after the fine tuning. Such post-processing trick cannot be used to improve standard RGB image descriptors, because we need to know the location of the night data. For instance, we use a night run from the Robotcar dataset with a low quality GPS signal, that makes impossible the automatic creation of triplets that are essential for training a deep image descriptor. We show in figure~\ref{fig:ft_night} that we are able to nearly multiply by two the localization performances by only fine tuning a small part of our system. Our best network achieves 23\% recall@1 against 13\% recall@1 for the best RGB baseline.
 
@@ -118,12 +122,13 @@ Considering all the networks, our method shows the best localization improvement
 
 \input{tab/depth_eval}
 
-Increasing the size of the system results in a better localization (RGB$^{+}$ + MAC versus RGB + MAC) on the two easiest query sets. Surprisingly RGB$^{+}$ system decreases localization performances on the winter queries compared to RGB. The system has probably over-fitted on the training data that are visually close to queries of ``Sunny" set and ``Long-term" set, but quiet different from the queries of ``Winter" set (see figure~\ref{fig:dataset}). Our RGBtD + MAC system always produces higher localization results facing RGB$^{+}$ + MAC, which shows that the side depth information provided during training is wisely used to describe the image location. 
+Increasing the size of the system results in a better localization on the two easiest query sets. Surprisingly RGB$^{+}$ system decreases localization performances on the winter queries compared to RGB. The system has probably over-fitted on the training data that are visually close to queries of ``Sunny" set and ``Long-term" set, but quiet different from the queries of ``Winter" set (see figure~\ref{fig:dataset}). Our RGBtD + MAC system always produces higher localization results facing RGB$^{+}$ + MAC, which shows that the side depth information provided during training is wisely used to describe the image location. 
 
 \begin{figure}
 	\center
 	\includegraphics[trim={0 15 0 0},clip,width=\linewidth]{vect/mod_ex}	
 	\caption{\label{fig:mod_ex} \textbf{Effect of fine tuning with night images on decoder output:}. Decoder trained with daylight images is unable to reconstruct the scene geometry (bottom line). Fine tuning the network with less than 1000 pairs \{image, depth map\} acquired by night highly improves appearance of the generated depth maps. Maps best viewed in color.}
+	\vspace{-0.25cm}
 \end{figure}
 
 \begin{figure}
@@ -134,7 +139,10 @@ Increasing the size of the system results in a better localization (RGB$^{+}$ + 
 	\begin{minipage}{0.49\linewidth}
 		\includegraphics[width=\linewidth]{plot/fig/nightft_recall}	
 	\end{minipage}
-
-	\includegraphics[trim={100 58 165 300},clip,width=0.4\linewidth]{plot/fig/legend_night}
+	\vspace{0.2cm}
+	
+	\includegraphics[trim={108 160 205 335},clip,width=0.4\linewidth]{plot/fig/legend_night_corr}\hspace{0.1cm}
+	\includegraphics[trim={108 60 205 430},clip,width=0.4\linewidth]{plot/fig/legend_night_corr}
 	\caption{\label{fig:ft_night} \textbf{Results on Night/Day query set after fine tuning:} we are able to drastically improve localization performance for the Night/Day challenging scenario by only fine tuning the decoder part of our network with weakly annotated data. Curves best viewed in color.}
+	\vspace{-0.25cm}
 \end{figure}
